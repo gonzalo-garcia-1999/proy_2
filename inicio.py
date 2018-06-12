@@ -17,4 +17,4 @@ def instrucciones():
     print(instruccion_general)
 
 instrucciones()
-#hola
+

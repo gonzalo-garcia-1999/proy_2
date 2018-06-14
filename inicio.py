@@ -9,8 +9,7 @@ def instrucciones():
   "Si esta regresando al programa inserte el numero que esta al lado del tema en el que se quedo",
   "Insertar todo en minusculas", 
   "Al final de un ejercicio insertar 'regresar' si desea retornar a la lectura",
-   "Si esta regregrsando ingrese su usuario",
-  "Para comenzar desde el comienzo inserte 'comenzar'"
+  "Para comenzar inserte 'comenzar'"
   ]
 
   for numero_de_instruccion in range(len(lista_instrucciones)):
@@ -38,7 +37,7 @@ def contenido():
   for numero_de_contenido in range(len(lista_contenido)):
     contenido_general=str(numero_de_contenido+1)+"."+lista_contenido[numero_de_contenido]
     print(contenido_general)
-  
+    
   for error_contenido in range(3):
     correr_contenido=input("\nIngrese Tema: ")
     if correr_contenido=="1" or correr_contenido=="variables":

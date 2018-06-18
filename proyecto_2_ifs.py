@@ -28,6 +28,8 @@ def ejercicio_boolean1():
     print("Obtuviste", contador_boolean, "preguntas bien")
     if contador_boolean== 4:
         print("¡Muy bien tuviste todo bien!")
+        print("¿Quieres seguir practicando?")
+        seguir_practicando = input("Si quieres escribe la palabra si acá: ")
     if contador_boolean < 4:
         print("¿Quieres seguir practicando?")
         seguir_practicando = input("Si quieres escribe la palabra si acá: ")
@@ -57,6 +59,10 @@ def ejercicio_boolean1():
             elif prueba4boolean == "!=":
                 contador_boolean += 1
             print("Obtuviste", contador_boolean, "preguntas bien")
+            if contador_boolean == 4:
+                print("¡Muy bien tuviste todo bien!")
+                print("¿Quieres seguir practicando?")
+                seguir_practicando = input("Si quieres escribe la palabra si acá: ")
             if contador_boolean < 4:
                 print("¿Quieres seguir practicando?")
                 seguir_practicando = input("Si quieres escribe la palabra si acá: ")
@@ -115,6 +121,8 @@ def ejercicio_boolean2():
     print("Obtuviste", contador_boolean2, " sobre 11 preguntas bien")
     if contador_boolean2 == 11:
         print("¡Muy bien tuviste todo bien!")
+        print("¿Quieres seguir practicando?")
+        seguir_practicando = input("Si quieres escribe la palabra si acá: ")
     if contador_boolean2 < 11:
         print("¿Quieres seguir practicando?")
         seguir_practicando = input("Si quieres escribe la palabra si acá: ")
@@ -168,6 +176,8 @@ def ejercicio_boolean2():
             print("Obtuviste", contador_boolean2, "preguntas bien")
             if contador_boolean2 == 11:
                 print("¡Muy bien tuviste todo bien!")
+                print("¿Quieres seguir practicando?")
+                seguir_practicando = input("Si quieres escribe la palabra si acá: ")
             if contador_boolean2 < 11:
                 print("¿Quieres seguir practicando?")
                 seguir_practicando = input("Si quieres escribe la palabra si acá: ")
@@ -302,6 +312,7 @@ def ejercicio_estructura_selectiva():
         contadorestructuraselectiva1 += 1
     if contadorestructuraselectiva1 == 2:
         print("Muy bien, tuviste todo bien")
+        seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")
     if contadorestructuraselectiva1 < 2:
         print("Tuviste", contadorestructuraselectiva1,"/2 preguntas bien")
         seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")
@@ -377,6 +388,7 @@ def ejercicio_estructura_selectiva():
                 contadorestructuraselectiva1 += 1
             if contadorestructuraselectiva1 == 2:
                 print("Muy bien, tuviste todo bien")
+                seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")
             if contadorestructuraselectiva1 < 2:
                 print("Tuviste", contadorestructuraselectiva1, "/2 preguntas bien")
                 seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")

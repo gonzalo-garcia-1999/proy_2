@@ -46,13 +46,13 @@ def contenido():
     if correr_contenido=="1" or correr_contenido=="variables":
       lectura_variables()
     elif correr_contenido=="2" or correr_contenido=="estructuras de control selectivas":
-      estructuras_de_control_selectivas()
+      lectura_if_boolean()
     elif correr_contenido=="3" or correr_contenido=="estructuras de control repetitivas":
       loops()
     elif correr_contenido=="4" or correr_contenido=="listas":
       listas()
     elif correr_contenido=="5" or correr_contenido=="funciones":
-      funciones()
+      lectura_función()
     elif correr_contenido=="6" or correr_contenido=="strings":
       strings()
     elif correr_contenido=="7" or correr_contenido=="menu":
@@ -136,6 +136,7 @@ def lectura_variables_str():
 
 #ifs
 def lectura_if_boolean():
+    print("\n---------------------\nSECCIÓN 2: Estructuras de Control Selectivas\n---------------------")
     print("Hola!")
     print("En esta parte se te va a enseñar sobre las estructuras selectivas. Sin embargo, para entender que son las estructuras selectivas, se necesita entender que es un boolean. \n Una expresión booleana compara a dos factores y da una respuesta entre verdadero y falso dependiendo del resultado de la comparación.")
     print(" Algunos ejemplos de expresiones booleanas: \n mayor: a>b \n mayor o igual: a>=b \n menor: a<b \n menor o igual: a<=b \n igual: a==b \n no igual: a!=b")
@@ -151,13 +152,13 @@ def lectura_if_boolean():
 def ejercicio_boolean1():
     print("\nAbajo, puedes encontrar diversos problemas con booleans, analiza los dos numeros que aparecen y escribe el boolean correcto para relacionarlos")
     print("4    5")
-    prueba1boolean= input("Escribe el boolean de comparación (<,>,<=,>=,) que relaciona los dos numeros de arriba aca: ")
+    prueba1boolean= input("Escribe solo el boolean de comparación (<,>,<=,>=,) que relaciona los dos numeros de arriba aca: ")
     print("1    -1")
-    prueba2boolean = input("Escribe el boolean de comparación (<,>,<=,>=) que relaciona los dos numeros de arriba aca: ")
+    prueba2boolean = input("Escribe solo el boolean de comparación (<,>,<=,>=) que relaciona los dos numeros de arriba aca: ")
     print("10   10")
-    prueba3boolean= input("Escribe el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
+    prueba3boolean= input("Escribe solo el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
     print("2    5")
-    prueba4boolean=input("Escribe el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
+    prueba4boolean=input("Escribe solo el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
     contador_boolean=0
     if prueba1boolean == "<":
         contador_boolean += 1
@@ -170,17 +171,19 @@ def ejercicio_boolean1():
     print("Obtuviste", contador_boolean, "preguntas bien")
     if contador_boolean== 4:
         print("¡Muy bien tuviste todo bien!")
-    if contador_boolean < 5:
-        print("¿Quieres seguir practicando?")
-        seguir_practicando_boolean1 = input("si/no: ")
-        if seguir_practicando_boolean1=="si":
-          ejercicio_boolean1()
-        elif seguir_practicando_boolean1=="no":
-          ejercicio_boolean2()
-        else:
-          print("Error.Responde si o no")
-          seguir_practicando=input("(si/no):")
+    
+    print("¿Quieres seguir practicando?")
+    seguir_practicando_boolean1 = input("si/no: ")
+    if seguir_practicando_boolean1=="si":
+      ejercicio_boolean1()
+    elif seguir_practicando_boolean1=="no":
+      ejercicio_boolean2()
+    else:
+      print("Error.Responde si o no")
+      seguir_practicando=input("(si/no):")
 def ejercicio_boolean2():
+    True_V = ["True", "T", "t", "true","V","v"]
+    False_F = ["False", "false", "F", "f",]
     print("-----------------------------------------------")
     print("\n¡Creiste que te librabas de los booleans pero no! Aquí hay otro ejercicio más que debes de resolver. Estas son expresiones boolean. Responde si cada expresión es True or false \n Escribe T si es True y F si es False")
     print("1 < 3")
@@ -229,26 +232,18 @@ def ejercicio_boolean2():
     if prueba11boolean2 in True_V:
         contador_boolean2 += 1
     print("Obtuviste", contador_boolean2, " sobre 11 preguntas bien")
-    if contador_boolean2 == 11:
-        print("¡Muy bien tuviste todo bien!")
-        siguiente=input("\n Ahora presiona Enter si quieres continuar a la siguiente sección:")
-        if siguiente=="":
-          lectura_estructura_selectiva()
-    if contador_boolean2 < 11:
-        print("¿Quieres seguir practicando?")
-        seguir_practicando2 = input("Si quieres escribe la palabra si acá: ")
-    if seguir_practicando2 in si_exp:
-        ejercicio_boolean2()
-    elif seguir_practicando2 in no_exp:
-      print("\nEntonces seguiremos con la educación")
+    transicion_boolean_a_ifs=input("\nAhora escribe 'continuar' si quieres continuar a la siguiente sección o escribe 'salir' para regresar al menu:")
+    time.sleep(3)
+    if transicion_boolean_a_ifs=="continuar":
       lectura_estructura_selectiva()
+    elif transicion_boolean_a_ifs=="salir":
+      instrucciones()
     else:
-      seguir_practicando2=="nada"
-      print("Error")
-      print("¿Quieres seguir practicando?")
-      seguir_practicando2 = input("(si/no):")   
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_boolean_a_ifs=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")    
+    time.sleep(3)   
 def lectura_estructura_selectiva():
-    print("")
+    print("\n\n")
     print("Ahora que ya dominaste las expresiones booleanas es momento de aprender que es una estructura selectiva. Estas son aquellas que evalúan una expresión,\n generalmente booleana, y a partir del resultado propuesto, se toma una o más decisiones. Esisten trs tipos las de slección simple, selección doble y selección múltiple ")
     print("Una estructura selectiva simple es aquella que después de evaluar una conidición determina su valor (verdadero/falso) y, si el valor da verdadero entonces la condición se llevará a cabo")
     print("Por ejemplo:")
@@ -337,7 +332,7 @@ def ejercicio_estructura_selectiva():
     print("""   print("7 soles")""")
     print("elif edad <= 59")
     print("""   print("12 soles")""")
-    lineafaltante1=input("")
+    lineafaltante1=input("Ingrese su codigo aca abajo:\n")
     print("""    print("5 soles")""")
     print("")
     print("Ejercicio 2:")
@@ -370,7 +365,7 @@ def ejercicio_estructura_selectiva():
     print("         if 8<=pH<=9:")
     print("""            print("Weak base")""")
     print("         else:")
-    lineafaltante2=input("              ")
+    lineafaltante2=input("Ingrese el codigo faltante aca:")
     print("""                print("Strong base")""")
     print("            else:")
     print("""               print("valor de pH no válido""")
@@ -458,7 +453,6 @@ def ejercicio_estructura_selectiva():
                 print("Muy bien, tuviste todo bien")
             if contadorestructuraselectiva1 < 2:
                 print("Tuviste", contadorestructuraselectiva1, "/2 preguntas bien")
-                seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")
     transicion_ifs_a_loops=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
     if transicion_ifs_a_loops=="":
      loops()
@@ -470,7 +464,7 @@ def ejercicio_estructura_selectiva():
 
 #loops 
 def loops():
-  print("---------------------\nSECCION 3: Estructuras de Control Repetitivas\n---------------------")
+  print("\n\n---------------------\nSECCION 3: Estructuras de Control Repetitivas\n---------------------")
   print("\nDefinición:\nUna estructura de control repetitiva, también llamada bucle, es un comando utlizado en Python para repetir una serie de instrucciónes. En otras palabras se utiliza para iterar una grupo de elementos por una cantidad de veces.")
  
   print("\nHay dos maneras de formar un bucle. \nLa primera es utilizando el comando 'while'. \nMientras que la segunda es utilizando el comando 'for'")
@@ -687,7 +681,7 @@ def ejercicio_funciones():
     print("")
     print("print(f(2))")
     print("")
-    output1funciones = int(input("Ingresa el output de la función: "))
+    output1funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("Numero 2 ,Función 1:")
@@ -704,7 +698,7 @@ def ejercicio_funciones():
     print("")
     print("print(f(3))")
     print("")
-    output2funciones = int(input("Ingresa el output de la función: "))
+    output2funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("Numero 3 ,Función 1:")
@@ -721,7 +715,7 @@ def ejercicio_funciones():
     print("")
     print("print(f(1))")
     print("")
-    output3funciones = int(input("Ingresa el output de la función: "))
+    output3funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("")
@@ -736,7 +730,7 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_misteriosa(4))")
     print("")
-    output4funciones = int(input("Ingresa el output de la función: "))
+    output4funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("Numero 2 , Función 2")
@@ -750,7 +744,7 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_misteriosa(8))")
     print("")
-    output5funciones = int(input("Ingresa el output de la función: "))
+    output5funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("Numero 3 , Función 2")
@@ -764,7 +758,7 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_misteriosa(6))")
     print("")
-    output6funciones = int(input("Ingresa el output de la función: "))
+    output6funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("")
@@ -781,7 +775,7 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_x(['amigo'])")
     print("")
-    output7funciones = int(input("Ingresa el output de la función: "))
+    output7funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("")
@@ -798,7 +792,7 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_x(['hasta'])")
     print("")
-    output8funciones = int(input("Ingresa el output de la función: "))
+    output8funciones = input("Ingresa el output de la función: ")
     print("")
     print("")
     print("")
@@ -815,207 +809,30 @@ def ejercicio_funciones():
     print("")
     print("print(funcion_x(['Soy un hacker'])")
     print("")
-    output9funciones = int(input("Ingresa el output de la función: "))
+    output9funciones = input("Ingresa el output de la función: ")
     contador_funciones = 0
-    if output1funciones == 20:
+    if output1funciones == "20":
         contador_funciones += 1
-    if output2funciones == 45:
+    if output2funciones == "45":
         contador_funciones += 1
-    if output3funciones == 5:
+    if output3funciones == "5":
         contador_funciones += 1
-    if output4funciones == 6:
+    if output4funciones == "6":
         contador_funciones += 1
-    if output5funciones == 28:
+    if output5funciones == "28":
         contador_funciones += 1
-    if output6funciones == 15:
+    if output6funciones == "15":
         contador_funciones += 1
-    if output7funciones == 3:
+    if output7funciones == "3":
         contador_funciones += 1
-    if output8funciones == 2:
+    if output8funciones == "2":
         contador_funciones += 1
-    if output9funciones == 4:
+    if output9funciones == "4":
         contador_funciones += 1
     if contador_funciones == 9:
         print("Muy bien, sacaste todo bien")
-        volver_a_intentar = input("Si quieres volver a intentar los ejercicios escribe la palabra si acá: ")
     else:
         print("sacaste ",contador_funciones,"/sobre 9 preguntas bien")
-        print("¿Quieres volver a intentar los ejercicios?")
-        volver_a_intentar = input("Si quieres volver a intentar los ejercicios escribe la palabra si acá: ")
-    while volver_a_intentar == "si":
-            print(
-                "Ahora, haras un pequeño quiz para ver si has comprendido el tema de funciones. Tienes que escribir el output de los siguientes códigos")
-            print("Constrains: Ingresa solo el número")
-            print("")
-            print("Numero 1 ,Función 1:")
-            print("")
-            print("")
-            print("def f(x):")
-            print("    return g(x)+h(x)")
-            print("")
-            print("def g(x):")
-            print("    return 4*h(x)")
-            print("")
-            print("def h(x):")
-            print("    return x**2")
-            print("")
-            print("print(f(2))")
-            print("")
-            output1funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("Numero 2 ,Función 1:")
-            print("")
-            print("")
-            print("def f(x):")
-            print("    return g(x)+h(x)")
-            print("")
-            print("def g(x):")
-            print("    return 4*h(x)")
-            print("")
-            print("def h(x):")
-            print("    return x**2")
-            print("")
-            print("print(f(3))")
-            print("")
-            output2funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("Numero 3 ,Función 1:")
-            print("")
-            print("")
-            print("def f(x):")
-            print("    return g(x)+h(x)")
-            print("")
-            print("def g(x):")
-            print("    return 4*h(x)")
-            print("")
-            print("def h(x):")
-            print("    return x**2")
-            print("")
-            print("print(f(1))")
-            print("")
-            output3funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("")
-            print("Numero 1 , Función 2")
-            print("")
-            print("")
-            print("def funcion_misteriosa(n):")
-            print("    suma = 0")
-            print("    for i in range(n):")
-            print("        suma=suma+i")
-            print("    return(suma")
-            print("")
-            print("print(funcion_misteriosa(4)")
-            print("")
-            output4funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("Numero 2 , Función 2")
-            print("")
-            print("")
-            print("def funcion_misteriosa(n):")
-            print("    suma = 0")
-            print("    for i in range(n):")
-            print("        suma=suma+i")
-            print("    return(suma")
-            print("")
-            print("print(funcion_misteriosa(8)")
-            print("")
-            output5funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("Numero 3 , Función 2")
-            print("")
-            print("")
-            print("def funcion_misteriosa(n):")
-            print("    suma = 0")
-            print("    for i in range(n):")
-            print("        suma=suma+i")
-            print("    return(suma")
-            print("")
-            print("print(funcion_misteriosa(6)")
-            print("")
-            output6funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("")
-            print("Numero 1, Función 3")
-            print("")
-            print("")
-            print("")
-            print("def funcion_x(variable):")
-            print("    contador = 0")
-            print("    for i in variable:")
-            print("        if i in ['a', 'e','i','o','u']:")
-            print("            contador=contador + 1")
-            print("    return contador")
-            print("")
-            print("print(funcion_x(['amigo']")
-            print("")
-            output7funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("")
-            print("Numero 2, Función 3")
-            print("")
-            print("")
-            print("")
-            print("def funcion_x(variable):")
-            print("    contador = 0")
-            print("    for i in variable:")
-            print("        if i in ['a', 'e','i','o','u']:")
-            print("            contador=contador + 1")
-            print("    return contador")
-            print("")
-            print("print(funcion_x(['hasta']")
-            print("")
-            output8funciones = int(input("Ingresa el output de la función: "))
-            print("")
-            print("")
-            print("")
-            print("Numero 3, Función 3")
-            print("")
-            print("")
-            print("")
-            print("def funcion_x(variable):")
-            print("    contador = 0")
-            print("    for i in variable:")
-            print("        if i in ['a', 'e','i','o','u']:")
-            print("            contador=contador + 1")
-            print("    return contador")
-            print("")
-            print("print(funcion_x(['Soy un hacker']")
-            print("")
-            output9funciones = int(input("Ingresa el output de la función: "))
-            contador_funciones = 0
-            if output1funciones == 20:
-                contador_funciones += 1
-            if output2funciones == 45:
-                contador_funciones += 1
-            if output3funciones == 5:
-                contador_funciones += 1
-            if output4funciones == 6:
-                contador_funciones += 1
-            if output5funciones == 28:
-                contador_funciones += 1
-            if output6funciones == 15:
-                contador_funciones += 1
-            if output7funciones == 3:
-                contador_funciones += 1
-            if output8funciones == 2:
-                contador_funciones += 1
-            if output9funciones == 4:
-                contador_funciones += 1
-            if contador_funciones == 9:
-                print("Muy bien, sacaste todo bien")
-                volver_a_intentar = input("Si quieres volver a intentar los ejercicios escribe la palabra si acá: ")
-            else:
-                print("sacaste ", contador_funciones, "/sobre 9 preguntas bien")
-                print("¿Quieres volver a intentar los ejercicios?")
-                volver_a_intentar = input("Si quieres volver a intentar los ejercicios escribe la palabra si acá: ")
     transicion_funciones_a_creditos=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
     if transicion_funciones_a_creditos=="":
       creditos()
@@ -1023,7 +840,7 @@ def ejercicio_funciones():
       instrucciones()
     else:
       print("Error.\nVuelva a ingresar su opcion")
-      transicion_funciones_a_creditos=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+      transicion_funciones_a_creditos=input("Presione enter para finalizar o escriba 'salir' para ir al inicio: ")
 
 #creditos
 def creditos():

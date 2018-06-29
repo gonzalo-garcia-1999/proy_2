@@ -1,1 +1,252 @@
-print("Esta es la sección de variables")
+def lectura_variables_int():
+    print("\n"
+      "\n-----------------------------"
+      "\nSECCIÓN 1.1: Los Enteros (int)"
+      "\n-----------------------------")
+    time.sleep(1)
+    print("\nLos números enteros son aquellos que no tienen decimales, tanto positivos como negativos."
+          "\nEn Python se pueden representar mediante el tipo int (de integer, entero) o el tipo long (largo)."
+          "\nLa única diferencia es que el tipo long permite almacenar números más grandes.Es aconsejable no utilizar el tipo long a menos que sea necesario, para no malgastar memoria."
+          "\n"
+          "\nEjemplo 1:"
+          "\n entero= 2"
+          "\n "
+          "\nEjemplo 2:"
+          "\n entero2= 412")
+    a = input()
+    if a == "":
+        ejercicios_variables_int()
+        print("Ahora pasaremos a:")
+        lectura_variables_float()
+    elif a=="salir":
+      contenido()
+def lectura_variables_float():
+    print("\n"
+      "\n-------------------------------"
+      "\nSECCIÓN 1.2: Los Reales (float)"
+      "\n-------------------------------")
+    time.sleep(1)
+    print(
+          "\nLos números reales son los que tienen decimales. En Python se expresan mediante el tipo float."
+          "\nPara representar un número real en Python se escribe primero la parte entera, seguido de un punto y por último la parte decimal. "
+          "\n"
+          "\n Ejemplo:"
+          "\n real: 1.234"
+          "\n"
+          "\n También se puede utilizar notación científica, y añadir una e (de exponente) para indicar un exponente en base 10. "
+          "\n "
+          "\nEjemplo:"
+          "\n real: 0.34e-2 ; sería equivalente a 0.34 x 10 a la -2 = 0.34 0.01 = 0.0034")
+    a = input()
+    if a == "":
+        ejercicios_variables_float()
+        time.sleep(1)
+        lectura_variables_bool()
+    elif a == "salir":
+        contenido()
+def lectura_variables_bool():
+    print("\n"
+      "\n-----------------------------"
+      "\nSECCIÓN 1.3: Los Booleanos(bool)"
+      "\n-----------------------------")
+    time.sleep(1)
+    print(""
+          "\nComo decíamos el tipo booleano sólo puede tener dos valores: True (cierto) y False (falso). "
+          "\nEstos valores son especialmente importantes para las expresiones condicionales y los bucles."
+          "\n Se profundizará el tema, en la siguiente sección.")
+    count=0
+    while count==0:
+      a=input()
+      if a=="":
+        lectura_variables_str()
+      elif a=="salir":
+        contenido()
+def lectura_variables_str():
+    print("\n"
+      "\n-----------------------------"
+      "\nSECCIÓN 1.4: Las cadenas (str)"
+      "\n-----------------------------")
+    time.sleep(1)
+    print("\n"
+          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”). "
+          "\nDentro de las comillas se pueden añadir caracteres especiales escapándolos con ‘\’ como ‘\ n’,para una nueva línea, o ‘\ t’, para la tabulación."
+          "\nUna cadena puede estar precedida por el carácter ‘u’ (Unicode) o 'r' (Raw) "
+          "\nLas cadenas raw se distinguen de las normales en que los caracteres escapados mediante la barra invertida (\) "
+          "\nno se sustituyen por sus contrapartidas. Esto es especialmente útil, por ejemplo, para las expresiones regulares."
+          "\n También es posible encerrar una cadena entre triples comillas (simples o dobles). "
+          "\nDe esta forma podremos escribir el texto en varias líneas, y al imprimir la cadena, se respetarán los saltos de línea"
+          "\nque introdujimos sin tener que recurrir al carácter '\ n', así como las comillas sin tener que escaparlas."
+          "\n"
+          "\nLas cadenas también admiten operadores como la suma (concatenación de cadenas) y la multiplicación.")
+    a = input()
+    if a == "":
+        lectura_if_boolean()
+def lectura_variables():
+    print("-------------------------------------------------------------------------------------"
+          "\n(Durante la lectura usted tendrá la opción de presionar Enter para continuar)"
+          "\n-------------------------------------------------------------------------------------"
+          "\n SECCIÓN 1: VARIABLES")
+    print(
+        "\nEn esta sección del programa se te va a enseñar sobre las variables."
+        "\nUna variable es una magnitud que puede tener un valor cualquiera de los comprendidos en un conjunto."
+        "\nLas variables pueden tener cualquier nombre y cuando se quiere asociar un valor o relacionar el valor a una variable se usa el signo igual'='"
+        "\n"
+        "\nEjemplo:"
+        "\nArea = 1"
+        "\n"
+        "\nEn Python los datos simples se categorizan según su tipo, los cuales son:"
+        "\n int: Representa enteros "
+        "\n float: representa números reales"
+        "\n str: representa las cadenas de texto"
+        "\n bool: representa datos boolean"
+        "\n"
+        "\n Para saber cual es el tipo de una variable se utiliza -type(x) ; donde x es la variable")
+    a = input()
+    if a == "":
+      ejercicios_variables_type()
+      lectura_variables_int()
+# Ejercicos Variables
+def ejercicios_variables_type():
+  print("--------------------------"
+  "\nEJERCICIOS TIPOS DE DATOS:"
+  "\n--------------------------")
+  time.sleep(1)
+  print("Vamos a practicar la identificación del tipo de datos"
+  "\nPara ello vamos a mostrarle varios objetos y usted tendrá que escribir el tipo de dato(int o bool o float):"
+  "\n")
+  puntos_type=0
+  cont=0
+  time.sleep(1)
+  print("\na)3.14")
+  pruebatype1=input("Tipo: ")
+  print("\nb)-34")
+  pruebatype2=input("Tipo: ")
+  print("\nc)True")
+  pruebatype3=input("Tipo: ")
+  print("\nd)3.0")
+  pruebatype4=input("Tipo: ")
+  print("\ne)78")
+  pruebatype5=input("Tipo: ")
+  
+  if pruebatype1 == "float":
+     puntos_type += 1
+  if pruebatype2 == "int":
+      puntos_type += 1
+  if pruebatype3 == "bool":
+      puntos_type += 1
+  if pruebatype4 == "float":
+      puntos_type += 1
+  if pruebatype5 == "int":
+      puntos_type += 1
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_type, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_type == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_type < 6:
+    print("¿Quieres seguir practicando?¿Ir al menu o continuar?")
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_variables_type()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        main_menu()
+      else:
+        print("Error.Responde")
+def ejercicios_variables_int():
+  print("--------------------------"
+  "\nEJERCICIOS DE ENTEROS:"
+  "\n--------------------------")
+  print("Vamos a practicar el tipo de dato int"
+  "\nPara ello vamos a mostrarle varios objetos y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_int=0
+  
+  pruebaint1=input("Los objetos de tipo int pueden tener decimales: ")
+  pruebaint2=input("Las objetos de tipo int son enteros: ")
+  pruebaint3=input("Puede ser un int y float al mismo tiempo ")
+  pruebaint4=input("Todo puede convertirse en int : ")
+  pruebaint5=input("Un int puede calcularse con un float: ")
+  if pruebaint1 in False_F:
+     puntos_int += 1
+  if pruebaint2 in True_V:
+      puntos_int += 1
+  if pruebaint3 in False_F:
+      puntos_int += 1
+  if pruebaint4 in False_F:
+      puntos_int += 1
+  if pruebaint5 in False_F:
+      puntos_int += 1
+  cont=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_int, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_int == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_int < 6:
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_variables_int()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        main_menu()
+      else:
+        print("Error.Responde")
+def ejercicios_variables_float():
+  time.sleep(1)
+  print("--------------------------"
+  "\nEJERCICIOS FLOAT:"
+  "\n--------------------------")
+  print("Vamos a practicar el tipo de dato float"
+  "\nPara ello vamos a mostrarle varios objetos y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_float=0
+  cont=0
+  print("\nLos objetos de tipo float pueden tener decimales:")
+  pruebafloat1=input("")
+  print("\nb)-34")
+  pruebafloat2=input("")
+  print("\nc)True")
+  pruebafloat3=input("")
+  print("\nd)3.0")
+  pruebafloat4=input("")
+  print("\ne)78")
+  pruebafloat5=input("")
+  
+  if pruebafloat1 == "V":
+     puntos_float += 1
+  if pruebafloat2 == "V":
+      puntos_float += 1
+  if pruebafloat3 == "F":
+      puntos_float += 1
+  if pruebafloat4 == "V":
+      puntos_float += 1
+  if pruebafloat5 == "F":
+      puntos_float += 1
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_float, "preguntas bien"
+  "\n----------------------------------")
+  count_float=0
+  if puntos_float == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_float <= 5:
+    while count_float==0:
+      print("¿Quieres reintentar, salir o continuar?")
+      seguir_practicando = input("(reintentar/salir/continuar: ")
+      if seguir_practicando =="repetir":
+        seguir_practicando = "s"
+        ejercicios_variables_float()
+      elif seguir_practicando == "salir":
+        time.sleep(1)
+        contenido()
+      elif seguir_practicando == "continuar":
+       return
+    else:
+      print("Error.Responde")
+      seguir_practicando = input("(reintentar/salir/continuar:")

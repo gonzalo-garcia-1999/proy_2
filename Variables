@@ -69,16 +69,8 @@ def lectura_variables_str():
       "\n-----------------------------")
     time.sleep(1)
     print("\n"
-          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”). "
-          "\nDentro de las comillas se pueden añadir caracteres especiales escapándolos con ‘\’ como ‘\ n’,para una nueva línea, o ‘\ t’, para la tabulación."
-          "\nUna cadena puede estar precedida por el carácter ‘u’ (Unicode) o 'r' (Raw) "
-          "\nLas cadenas raw se distinguen de las normales en que los caracteres escapados mediante la barra invertida (\) "
-          "\nno se sustituyen por sus contrapartidas. Esto es especialmente útil, por ejemplo, para las expresiones regulares."
-          "\n También es posible encerrar una cadena entre triples comillas (simples o dobles). "
-          "\nDe esta forma podremos escribir el texto en varias líneas, y al imprimir la cadena, se respetarán los saltos de línea"
-          "\nque introdujimos sin tener que recurrir al carácter '\ n', así como las comillas sin tener que escaparlas."
-          "\n"
-          "\nLas cadenas también admiten operadores como la suma (concatenación de cadenas) y la multiplicación.")
+          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”). 
+          "\nSe sabra todo sobre las strings, en una sección completa.")
     a = input()
     if a == "":
         lectura_if_boolean()

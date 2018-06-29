@@ -69,7 +69,7 @@ def lectura_variables_str():
       "\n-----------------------------")
     time.sleep(1)
     print("\n"
-          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”). 
+          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”)." 
           "\nSe sabra todo sobre las strings, en una sección completa.")
     a = input()
     if a == "":

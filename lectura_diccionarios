@@ -10,7 +10,7 @@ def lectura_diccionarios():
   "\nDiccionario_ejemplo2 = {'Ron':19,'Pepe':20,'Juan':18}"
   "\n~Siendo Ron la primera llave y 19 el primer valor. Consecutivamente Pepe la segunda llave y 20 el segundo valor.")
   e=input()
-  print("La búsqueda es similar a una lista, la diferencia por ser diccionario es ingresar el campo llave y te retorna el campo valor pero si no encuentra la llave retorna error.
+  print("La búsqueda es similar a una lista, la diferencia por ser diccionario es ingresar el campo llave y te retorna el campo valor pero si no encuentra la llave retorna error."
     "\n"
     "\nEjemplo:"
     "\nDiccionario_ejemplo3 = {'a':1,'b':2,'c':3}"
@@ -41,8 +41,31 @@ def lectura_diccionarios():
         "\nprint(b)"
         "\n>>False")
   e=input()
-  print("Para obtener todas las llaves de una tupla debemos usar el comando Diccionario.Keys()"
+  print("Para obtener todas las llaves de una tupla debemos usar el comando Nombre_de_Diccionario.keys() o para obtener todos los valores usar Nombre_de_Diccionario.values()"
   "\n"
   "\nEjemplo:"
   "\nDiccionario_ejemplo7= {'Rocio'16:,'Álvaro'18:,'Katherine':17,'Jorge':19}"
-  "\n")
+  "\ntupla_keys = Diccionario_ejemplo7.keys()"
+  "\nprint(tupla)"
+  "\n>>dict_keys(['Rocio', 'Álvaro', 'Katherine','Jorge'])"
+  "\n"
+  "\ntupla_values = Diccionario_ejemplo7.values"
+  "\nprint(tupla_values)"
+  "\n>>dict_values([16, 18, 17, 19])")
+  e=input()
+  print("Existen caracteristicas relevantes acerca de las llaves y los valores"
+  "\n Las llaves:"
+  "\n -Deben ser valores únicos"
+  "\n -Tipo de dato inmutable(int,float,string,tuple,bool)"
+  "\n"
+  "\n Los valores:"
+  "\n -Cualquier tipo de dato(inmutable o mutable)"
+  "\n -Pueden ser valores duplicados")
+  e=input()
+  print("Para agregar un elemento a un diccionario podemos usar el comando Nombre_del_diccionario.update({llave:valor})"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo8 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nDiccionario_ejemplo8.update({'universidad':'Utec'})"
+  "\nprint(Diccionario_ejemplo8)"
+  "\n>>{'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30,'universidad':'Utec'")

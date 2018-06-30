@@ -1,0 +1,48 @@
+def lectura_diccionarios():
+  print("Los diccionarios sirven para almacenar información, ordenar información y buscar información."
+  "\nCada diccionario esta compuesto por pares de datos;"
+  "\nUn campo llave, pra hacer una búsqueda y nos permita luego manipular el registro."
+  "\nUn campo valor, para almacenar cualquier tipo de dato"
+  "\nPara crear un diccionario en Python utilizamos llaves {}"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo = {}"
+  "\nDiccionario_ejemplo2 = {'Ron':19,'Pepe':20,'Juan':18}"
+  "\n~Siendo Ron la primera llave y 19 el primer valor. Consecutivamente Pepe la segunda llave y 20 el segundo valor.")
+  e=input()
+  print("La búsqueda es similar a una lista, la diferencia por ser diccionario es ingresar el campo llave y te retorna el campo valor pero si no encuentra la llave retorna error.
+    "\n"
+    "\nEjemplo:"
+    "\nDiccionario_ejemplo3 = {'a':1,'b':2,'c':3}"
+    "\nprint(Diccionario_ejemplo3['c']"
+    "\n>>3"
+    "\n"
+    "\nDiccionario_ejemplo4 = {'Alvaro':29,'Cesar':34,'Pablo':12}"
+    "\nprint(Diccionario_ejemplo4['Antonio'])"
+    "\n>>KeyError: 'Antonio'")
+  e= input()
+  print("Operaciones con diccionarios:"
+        "\nPara hacer un registro al diccionario.Se debe usar los corchetes [], escribiendo dentro la nueva llave y luego = al nuevo valor."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo5 = {'Adam':45,'Sandler':34,'Wilson':21}"
+        "\nDiccionario_ejemplo5['Juan'] = 10"
+        "\nprint(Diccionario_ejemplo5)"
+        "\n>>{'Adam':45,'Sandler':34,'Wilson':21,'Juan':10}"
+        "\n"
+        "\nPara verificar si existe una llave en el diccionario se utiliza el comando -variable in Diccionario-; donde variable es la llave que se busca y Diccionario es el nombre del diccionario."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo6 = {'Ant':45,'Seal':34,'Wanda':21}"
+        "\na = 'Ant' in Diccionario_ejemplo6"
+        "\nprint(a)"
+        "\n>>True"
+        "\nb = 'Bear' in Diccionario_ejemplo6"
+        "\nprint(b)"
+        "\n>>False")
+  e=input()
+  print("Para obtener todas las llaves de una tupla debemos usar el comando Diccionario.Keys()"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo7= {'Rocio'16:,'Álvaro'18:,'Katherine':17,'Jorge':19}"
+  "\n")

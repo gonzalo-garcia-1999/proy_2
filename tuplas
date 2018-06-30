@@ -69,3 +69,6 @@ def lectura_listas_tuplas():
   "\n a= (0, 1, 4) != (0, 3, 4)"
   "\nprint(a)"
   "\n>>True")
+  a=input()
+  if a == "":
+    ejercicios_listas_tuplas()

@@ -77,8 +77,11 @@ def lectura_variables_str():
 def lectura_variables():
     print("-------------------------------------------------------------------------------------"
           "\n(Durante la lectura usted tendrá la opción de presionar Enter para continuar)"
-          "\n-------------------------------------------------------------------------------------"
+          "\n-------------------------------------------------------------------------------------")
+    time.sleep(1)
+    print(
           "\n SECCIÓN 1: VARIABLES")
+    time.sleep(1)
     print(
         "\nEn esta sección del programa se te va a enseñar sobre las variables."
         "\nUna variable es una magnitud que puede tener un valor cualquiera de los comprendidos en un conjunto."

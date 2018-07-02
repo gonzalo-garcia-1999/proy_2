@@ -804,6 +804,7 @@ def lectura_función():
     print("    value = 1")
     print("    return value")
     print("")
+    time.sleep(2)
     print(
         """En este caso se crea la función utilizando la palabra "def". \n Luego, se nombra la función.\n Se le manda una labor que hacer a la función, la cual recibe un valor de uno y, \n finalmente, se retorna el valor asignado. """)
     print("")
@@ -828,6 +829,7 @@ def lectura_función():
     print("""temperatura=int(input("Ingresa tu temperatura en farenheit":))""")
     print("""print("fahr_to_kelvin(temperatura)""")
     print("")
+    time.sleep(2)
     print("")
     print("También se pueden utilizar funciones dentro de funciones")
     print("Un ejemplo es la función print")
@@ -843,6 +845,7 @@ def lectura_función():
     print("licencia()")
     print("")
     print("")
+    time.sleep(2)
     print(
         "Otro probelam que se puede encontrar con las funciones es la definición de las variables. Acá hay una función ara ilustrarlo:")
     print("")
@@ -859,6 +862,7 @@ def lectura_función():
         "El problema de esta función es que los valores son muy específicos ya que la función solo funcionaría con los valores a y b. Además siempre va a imprimir el resultado, lo cual no siempre es útil")
     print("Esto puede solucionarse")
     print("")
+    time.sleep(2)
     print("Aca está la función mejorada:")
     print("")
     print("")

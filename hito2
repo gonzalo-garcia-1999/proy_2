@@ -681,7 +681,16 @@ def loops():
   for x_loops in range(1, 3):
 	  for y_loops in range(1, 5):
 	    print(x_loops*y_loops)
-  
+  lectura_loops_ejer=input("¿Desea salir, continuar o reiniciar seccion?")
+  if lectura_loops_ejer=="salir":
+    instrucciones()
+  elif lectura_loops_ejer=="continuar":
+    ejer_loops()
+  elif lectura_loops_ejer=="reiniciar":
+    loops()
+  else:
+    print("Error\nIngrese 'salir', 'continuar' o 'reiniciar'")
+def ejer_loops():
   print("\nAhora vamos a los ejercicios.\n\nEjercicio 1:\n¿Cúal sera el output del codigo a continuación?\n\nlista=[1,2,3,7,11,13,17,19]\nsuma=0\nfor i in lista:\n\tsuma=suma+i\nprint(suma)")
   res_ejercicio1_loops=input("Ingrese su respuesta aquí:")
   contador_loops=0
@@ -725,7 +734,7 @@ def loops():
   elif fin_loops=="reiniciar":
     loops()
   else:
-    print("Error\nIngrese 'salir', 'continuar' o 'reiniciar'")      
+    print("Error\nIngrese 'salir', 'continuar' o 'reiniciar'")          
 
 #Listas
 def lectura_listas():

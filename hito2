@@ -1,0 +1,1809 @@
+import time
+
+#instrucciones
+def instrucciones():
+  print("\nBienvenido")
+  print("\nEste programa le enseñara a usar python.")
+  print("\nInstrucciones:")
+  
+  lista_instrucciones=[
+  "Al finalizar una lectura o ejercicio insertar 'continuar' o 'salir'",
+  "Si esta regresando al programa inserte el numero que esta al lado del tema en el que se quedo",
+  "Insertar todo en minusculas", 
+  "Al final de un ejercicio insertar 'regresar' si desea retornar a la lectura",
+   "Si esta regregrsando ingrese su usuario",
+  "Para comenzar desde el comienzo inserte 'comenzar'"
+  ]
+
+  for numero_de_instruccion in range(len(lista_instrucciones)):
+    instruccion_general=str(numero_de_instruccion+1)+"."+lista_instrucciones[numero_de_instruccion]
+    print(instruccion_general)
+  correr_instrucciones=input("\nInserte aquí: ")
+  if correr_instrucciones=="comenzar":
+    contenido()
+
+#contenido
+def contenido():
+  print("\nTemas")
+
+  lista_contenido=[
+  "Variables",
+  "Estructuras de Control Selectivas",
+  "Estructuras de Control Repetitivas",
+  "Listas",
+  "Tuplas",
+  "Diccionarios",
+  "Funciones",
+  "Strings",
+  "Ordenamientos",
+  "Busquedas",
+  "Archivos",
+  "Menu",
+  "Salir"
+  ]
+
+  for numero_de_contenido in range(len(lista_contenido)):
+    contenido_general=str(numero_de_contenido+1)+"."+lista_contenido[numero_de_contenido]
+    print(contenido_general)
+  
+  for error_contenido in range(3):
+    correr_contenido=input("\nIngrese Tema: ")
+    if correr_contenido=="1" or correr_contenido=="variables":
+      lectura_variables()
+    elif correr_contenido=="2" or correr_contenido=="estructuras de control selectivas":
+      lectura_if_boolean()
+    elif correr_contenido=="3" or correr_contenido=="estructuras de control repetitivas":
+      loops()
+    elif correr_contenido=="4" or correr_contenido=="listas":
+      lectura_listas()
+    elif correr_contenido=="5" or correr_contenido=="tuplas":
+      lectura_listas_tuplas
+    elif correr_contenido=="6" or correr_contenido=="diccionarios":
+      lectura_diccionarios()
+    elif correr_contenido=="7" or correr_contenido=="funciones":
+      lectura_función()
+    elif correr_contenido=="8" or correr_contenido=="strings":
+      strings()
+    elif correr_contenido=="9" or correr_contenido=="ordenamientos":
+      algoritmos_ordenamiento()
+    elif correr_contenido=="10" or correr_contenido=="busquedas":
+      algoritmos_busquedas_lectura()
+    elif correr_contenido=="11" or correr_contenido=="archivos":
+      lectura_archivos()
+    elif correr_contenido=="12" or correr_contenido=="menu":
+      instrucciones()
+    elif correr_contenido=="13" or correr_contenido=="salir":
+      break
+    else:
+      print("\nPor favor ingrese el numero que marca el tema")
+
+#variables
+def lectura_variables():
+    print("-------------------------------------------------------------------------------------"
+          "\n(Durante la lectura usted tendrá la opción de presionar Enter para continuar)"
+          "\n-------------------------------------------------------------------------------------"
+          "\n SECCIÓN 1: VARIABLES")
+    print(
+        "\nEn esta sección del programa se te va a enseñar sobre las variables."
+        "\nUna variable es una magnitud que puede tener un valor cualquiera de los comprendidos en un conjunto."
+        "\nLas variables pueden tener cualquier nombre y cuando se quiere asociar un valor o relacionar el valor a una variable se usa el signo igual'='"
+        "\n"
+        "\nEjemplo:"
+        "\nArea = 1"
+        "\n"
+        "\nEn Python los datos simples se categorizan según su tipo, los cuales son:"
+        "\n int: Representa enteros "
+        "\n float: representa números reales"
+        "\n str: representa las cadenas de texto"
+        "\n bool: representa datos boolean"
+        "\n"
+        "\n Para saber cual es el tipo de una variable se utiliza -type(x) ; donde x es la variable")
+    a=input()
+    if a =="":
+        print("Ahora vamos a profundizar las definiciones de cada tipo")
+        lectura_varibales_int()
+def lectura_varibales_int():
+    print("\n LOS ENTEROS (int):"
+          "\nLos números enteros son aquellos que no tienen decimales, tanto positivos como negativos."
+          "\nEn Python se pueden representar mediante el tipo int (de integer, entero) o el tipo long (largo)."
+          "\nLa única diferencia es que el tipo long permite almacenar números más grandes.Es aconsejable no utilizar el tipo long a menos que sea necesario, para no malgastar memoria."
+          "\n"
+          "\nEjemplo 1:"
+          "\n entero= 2"
+          "\n "
+          "\nEjemplo 2:"
+          "\n entero2= 412")
+    a=input()
+    if a=="":
+        lectura_variables_float()
+def lectura_variables_float():
+    print("\nLOS REALES"
+          "\nLos números reales son los que tienen decimales. En Python se expresan mediante el tipo float."
+          "\nPara representar un número real en Python se escribe primero la parte entera, seguido de un punto y por último la parte decimal. "
+          "\n"
+          "\n Ejemplo:"
+          "\n real: 1.234"
+          "\n"
+          "\n También se puede utilizar notación científica, y añadir una e (de exponente) para indicar un exponente en base 10. "
+          "\n "
+          "\nEjemplo:"
+          "\n real: 0.34e-2 ; sería equivalente a 0.34 x 10 a la -2 = 0.34 0.01 = 0.0034")
+    a = input()
+    if a == "":
+        lectura_variables_str()
+    elif a=="salir":
+      contenido()
+def lectura_variables_str():
+    print("\nLAS CADENAS"
+          "\nLas cadenas no son más que texto encerrado entre comillas simples (‘cadena’) o dobles (“cadena”). "
+          "\nDentro de las comillas se pueden añadir caracteres especiales escapándolos con ‘\’ como ‘\ n’,para una nueva línea, o ‘\ t’, para la tabulación."
+          "\nUna cadena puede estar precedida por el carácter ‘u’ (Unicode) o 'r' (Raw) "
+          "\nLas cadenas raw se distinguen de las normales en que los caracteres escapados mediante la barra invertida (\) "
+          "\nno se sustituyen por sus contrapartidas. Esto es especialmente útil, por ejemplo, para las expresiones regulares."
+          "\n También es posible encerrar una cadena entre triples comillas (simples o dobles). "
+          "\nDe esta forma podremos escribir el texto en varias líneas, y al imprimir la cadena, se respetarán los saltos de línea"
+          "\nque introdujimos sin tener que recurrir al carácter '\ n', así como las comillas sin tener que escaparlas."
+          "\n"
+          "\nLas cadenas también admiten operadores como la suma (concatenación de cadenas) y la multiplicación.")
+    a=input()
+    if a=="":
+      lectura_if_boolean()
+
+#ifs
+def lectura_if_boolean():
+    print("\n---------------------\nSECCIÓN 2: Estructuras de Control Selectivas\n---------------------")
+    print("Hola!")
+    print("En esta parte se te va a enseñar sobre las estructuras selectivas. Sin embargo, para entender que son las estructuras selectivas, se necesita entender que es un boolean. \n Una expresión booleana compara a dos factores y da una respuesta entre verdadero y falso dependiendo del resultado de la comparación.")
+    print(" Algunos ejemplos de expresiones booleanas: \n mayor: a>b \n mayor o igual: a>=b \n menor: a<b \n menor o igual: a<=b \n igual: a==b \n no igual: a!=b")
+    print("También, pueden haber expresiones booleanas que comparen mas de dos propiedades de distintos elementos. Por ejemplo:\n a<b and a<c \n a==b or a==c \n ")
+    print("Además, se pueden utilizar expresiones aritmeticas con los booleanss, tal y como:\n a+b>c+d \n a*b==b*c \n a%c!=a%b")
+    a=input()
+    while a!="":
+      print("\nPor favor, no escribas palabras sin sentido.(Presiona Enter para continuar)")
+      a=input()
+    if a=="":
+      print("Ahora, intetalo tu!")
+      ejercicio_boolean1()
+def ejercicio_boolean1():
+    print("\nAbajo, puedes encontrar diversos problemas con booleans, analiza los dos numeros que aparecen y escribe el boolean correcto para relacionarlos")
+    print("4    5")
+    prueba1boolean= input("Escribe solo el boolean de comparación (<,>,<=,>=,) que relaciona los dos numeros de arriba aca: ")
+    print("1    -1")
+    prueba2boolean = input("Escribe solo el boolean de comparación (<,>,<=,>=) que relaciona los dos numeros de arriba aca: ")
+    print("10   10")
+    prueba3boolean= input("Escribe solo el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
+    print("2    5")
+    prueba4boolean=input("Escribe solo el boolean de igualdad (==, !=) que relaciona los dos numeros de arriba aca: ")
+    contador_boolean=0
+    if prueba1boolean == "<":
+        contador_boolean += 1
+    if prueba2boolean == ">":
+        contador_boolean += 1
+    if prueba3boolean == "==":
+        contador_boolean += 1
+    if prueba4boolean =="!=":
+        contador_boolean += 1
+    print("Obtuviste", contador_boolean, "preguntas bien")
+    if contador_boolean== 4:
+        print("¡Muy bien tuviste todo bien!")
+    
+    print("¿Quieres seguir practicando?")
+    seguir_practicando_boolean1 = input("si/no: ")
+    if seguir_practicando_boolean1=="si":
+      ejercicio_boolean1()
+    elif seguir_practicando_boolean1=="no":
+      ejercicio_boolean2()
+    else:
+      print("Error.Responde si o no")
+      seguir_practicando=input("(si/no):")
+def ejercicio_boolean2():
+    True_V = ["True", "T", "t", "true","V","v"]
+    False_F = ["False", "false", "F", "f",]
+    print("-----------------------------------------------")
+    print("\n¡Creiste que te librabas de los booleans pero no! Aquí hay otro ejercicio más que debes de resolver. Estas son expresiones boolean. Responde si cada expresión es True or false \n Escribe T si es True y F si es False")
+    print("1 < 3")
+    prueba1boolean2 = input("Escribe tu respuesta acá: ")
+    print("5.0 > 4.999")
+    prueba2boolean2 = input("Escribe tu respuesta acá: ")
+    print("7 >= 7")
+    prueba3boolean2 = input("Escribe tu respuesta acá: ")
+    print("2+2 >= 5")
+    prueba4boolean2 = input("Escribe tu respuesta aca: ")
+    print("True or False")
+    prueba5boolean2 = input("Escribe tu respuesta aca: ")
+    print("False and True")
+    prueba6boolean2 = input("Escribe tu respuesta aca: ")
+    print("not True")
+    prueba7boolean2 = input("Escribe tu respuesta aca: ")
+    print("2.0-1.5 != 4.0-3.5")
+    prueba8boolean2 = input("Escribe tu respuesta aca: ")
+    print("3>4 or (2<=3 and 9<10)")
+    prueba9boolean2 = input("Escribe tu respuesta aca: ")
+    print("not(4>5 and 3.00<=3.01)")
+    prueba10boolean2 = input("Escribe tu respuesta aca: ")
+    print("5%5 != 3%4")
+    prueba11boolean2= input("Escribe tu respuesta aca: ")
+    contador_boolean2 = 0
+    if prueba1boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba2boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba3boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba4boolean2 in False_F:
+        contador_boolean2 == contador_boolean2
+    if prueba5boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba6boolean2 in False_F:
+        contador_boolean2 += 1
+    if prueba7boolean2 in False_F:
+        contador_boolean2 += 1
+    if prueba8boolean2 in False_F:
+        contador_boolean2 += 1
+    if prueba9boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba10boolean2 in True_V:
+        contador_boolean2 += 1
+    if prueba11boolean2 in True_V:
+        contador_boolean2 += 1
+    print("Obtuviste", contador_boolean2, " sobre 11 preguntas bien")
+    transicion_boolean_a_ifs=input("\nAhora escribe 'continuar' si quieres continuar a la siguiente sección o escribe 'salir' para regresar al menu:")
+    time.sleep(3)
+    if transicion_boolean_a_ifs=="continuar":
+      lectura_estructura_selectiva()
+    elif transicion_boolean_a_ifs=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_boolean_a_ifs=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")    
+    time.sleep(3)   
+def lectura_estructura_selectiva():
+    print("\n\n")
+    print("Ahora que ya dominaste las expresiones booleanas es momento de aprender que es una estructura selectiva. Estas son aquellas que evalúan una expresión,\n generalmente booleana, y a partir del resultado propuesto, se toma una o más decisiones. Esisten trs tipos las de slección simple, selección doble y selección múltiple ")
+    print("Una estructura selectiva simple es aquella que después de evaluar una conidición determina su valor (verdadero/falso) y, si el valor da verdadero entonces la condición se llevará a cabo")
+    print("Por ejemplo:")
+    print("")
+    print("if a > 5:")
+    print("""   print("este numero es mayor a 5")""")
+    print("")
+    print("Entonces, si a==6 se imprimiría la frase: este numero es mayor a 5, pero si a==4, no se imprimiría nada y la frase no se imprimiría")
+    print("Nótese dos cosas:")
+    print("1: se utiliza la expresión if para plantear una expresión selectiva")
+    print("2: los puntos después del 5 al concretar el if los cuales sn necesarios para el sintaxis")
+    print("")
+    print("")
+    print("Ahora, se va a imprimir un ejemplo de una estructura selectiva doble. Esta tiene dos caracteristicas, la palabra if y la palabra else")
+    print("La palabra if denota e seguimiento de esa parte de la función si la condición es verdad. La palabra else denota el seguimiento de la función si la condición planteada \n en el if no es verdad ")
+    print("Por ejemplo:")
+    print("if a > 5:")
+    print("""   print("este numero es mayor a 5")""")
+    print("else:")
+    print("""   print("este numero no es mayor a 5")""")
+    print("")
+    print("Entonces, acá, si el numero es mayor a 5 pasaría por la condición if e imprimiría el texto (este numero es mayor a 5). \n Sin embargo, si el numero no es mayor a 5 se imprimiría la segunda frase (este numero no es mayor a 5")
+    print("Por ejemplo, si a = 4, entonces se imprimiría: este numero no es mayor a 5 pero, si a = 6, se imprimiría: este numero es mayor a 5. OJO: el bloque de else es siempre opcional")
+    print("")
+    print("")
+    print("Finalmente, existen las estructuras selectivas multiples.\n Estas existen cuando hay multiples caminos que un if puede recorer y hay varias opciones que se quieren que probar. Para esto se utiliza la palabra elif después de el primer if\n Por ejemplo: ")
+    print("if a>5:")
+    print("""   print("este numero es mayor a 5")""")
+    print("elif 4<=a<=5:")
+    print("""   print("este numero esta entre 4 y 5")""")
+    print("elif a<4:")
+    print("""   print("este numero es menor a 4")""")
+    print("")
+    print("Entonces, acá hay varias opciones por donde el programa puede pasar. \nSi es que a fuera mayor a 5 se ejecutaría la primera idea, si a estuviera entre 4 y 5 se ejecutaría lo segundo y si a fuera menor que 4 se ejecutaría la indicación que está debajo del 3 elif. ")
+    print("Por ejemplo: \n si a = 6, se imprime: este numero es mayor a 5 \n si a = 4.5, se imprime: este numero esta entre 4 y 5 \n si a = 2, se imprime: este numero es menor a 4 ")
+    print("")
+    print("")
+    print("Ahora, un ejemplo:")
+    print("Escribe un programa que permita a una persona escribir su edad y determine si es mayor de edad o no" )
+    print("El programa sería así:")
+    print("")
+    print("""edad = int(input("Ingrese su edad: "))""")
+    print("if edad >= 18:")
+    print("""   print("Eres mayor de edad")""")
+    print("else:")
+    print("""   print("no puedes entrar")""")
+    print("")
+    print("Finalmente, también existen los if anidados. Estos se verían así:")
+    print("")
+    print("if B1:")
+    print("   if B2:")
+    print("       S1")
+    print("   else:")
+    print("       S2")
+    print("")
+    transicion_ejercico_if=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_ejercico_if=="":
+      ejercicio_estructura_selectiva()
+    elif transicion_ejercico_if=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_ejercico_if=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def ejercicio_estructura_selectiva():
+    print("Acá hay dos ejercicio y dos programas incompletos. Escribe la linea que falta en ambos para que el programa funcione")
+    print("Nota: sea exacto")
+    print("")
+    print("Ejercicio 1:")
+    print("Los Martes Cineplanet ofrce precios especiales a sus clientes.\n Escriba un Programa que permita leer como dato la edad de una persona y, segun las instrucciones abajo, determine el precio a pagar")
+    print("")
+    print("Edad                | Precio")
+    print("____________________|________")
+    print("hasta 15 años       | 7 soles ")
+    print("de 16 hasta 59 años | 12 soles")
+    print("de 60 a más         | 5 soles")
+    print("")
+    print("Condición: Se escribe exactamente lo que sale en la tabla")
+    print("Ejemplo:")
+    print("Input 1: 18")
+    print("Output 1: 12 soles")
+    print("")
+    print("Codigo incompleto:")
+    print("")
+    print("""edad = int(input(""))""")
+    print("if edad <= 15:")
+    print("""   print("7 soles")""")
+    print("elif edad <= 59")
+    print("""   print("12 soles")""")
+    lineafaltante1=input("Ingrese su codigo aca abajo:\n")
+    print("""    print("5 soles")""")
+    print("")
+    print("Ejercicio 2:")
+    print("Escribir un programa que permita leer el pH y el programa indique el tipo de solución. El tipo de solución se encuentra en la siguiente tabla:")
+    print("")
+    print(" pH level    | Solution Category")
+    print("__________________________________")
+    print("   0-4       |    Strong Acid")
+    print("   5-6       |     Weak Acid")
+    print("    7        |       Neutral")
+    print("   8-9       |     Weak Base")
+    print("   10-14     |    Strong Base")
+    print("Condición: se imprime exactamente el valor que sale en la tabla")
+    print("Ejemplo:")
+    print("input 1: 3")
+    print("Strong Acid")
+    print("")
+    print("Nota: Usar If Anidado")
+    print("")
+    print("Ejercicio Incompleto:")
+    print("if 0<=pH<=4:")
+    print("""   print("Strong Acid")""")
+    print("else:")
+    print("   if 5<=pH<=6:")
+    print("""      print("Weak acid")""")
+    print("   else:")
+    print("      if 7==pH:")
+    print("""         print("Neutral")""")
+    print("      else:")
+    print("         if 8<=pH<=9:")
+    print("""            print("Weak base")""")
+    print("         else:")
+    lineafaltante2=input("Ingrese el codigo faltante aca:")
+    print("""                print("Strong base")""")
+    print("            else:")
+    print("""               print("valor de pH no válido""")
+    contadorestructuraselectiva1 = 0
+    if lineafaltante1 == "else:":
+        contadorestructuraselectiva1 += 1
+    if lineafaltante2 == "if 10<=pH<=14:":
+        contadorestructuraselectiva1 += 1
+    if contadorestructuraselectiva1 == 2:
+        print("Muy bien, tuviste todo bien")
+    if contadorestructuraselectiva1 < 2:
+        print("Tuviste", contadorestructuraselectiva1,"/2 preguntas bien")
+        seguirpracticando = input("Si quieres seguir practicando escribe la palabra si acá:")
+        while seguirpracticando == "si":
+            print(
+                "Acá hay dos ejercicio y dos programas incompletos. Escribe la linea que falta en ambos para que el programa funcione")
+            print("Nota: sea exacto")
+            print("")
+            print("Ejercicio 1:")
+            print(
+                "Los Martes Cineplanet ofrce precios especiales a sus clientes.\n Escriba un Programa que permita leer como dato la edad de una persona y, segun las instrucciones abajo, determine el precio a pagar")
+            print("")
+            print("Edad                | Precio")
+            print("____________________|________")
+            print("hasta 15 años       | 7 soles ")
+            print("de 16 hasta 59 años | 12 soles")
+            print("de 60 a más         | 5 soles")
+            print("")
+            print("Condición: Se escribe exactamente lo que sale en la tabla")
+            print("Ejemplo:")
+            print("Input 1: 18")
+            print("Output 1: 12 soles")
+            print("")
+            print("Codigo incompleto:")
+            print("")
+            print("""edad = int(input(""))""")
+            print("if edad <= 15:")
+            print("""   print("7 soles")""")
+            print("elif edad <= 59")
+            print("""   print("12 soles")""")
+            lineafaltante1 = input("")
+            print("""    print("5 soles")""")
+            print("")
+            print("Ejercicio 2:")
+            print(
+                "Escribir un programa que permita leer el pH y el programa indique el tipo de solución. El tipo de solución se encuentra en la siguiente tabla:")
+            print("")
+            print(" pH level    | Solution Category")
+            print("__________________________________")
+            print("   0-4       |    Strong Acid")
+            print("   5-6       |     Weak Acid")
+            print("    7        |       Neutral")
+            print("   8-9       |     Weak Base")
+            print("   10-14     |    Strong Base")
+            print("Condición: se imprime exactamente el valor que sale en la tabla")
+            print("Ejemplo:")
+            print("input 1: 3")
+            print("Strong Acid")
+            print("")
+            print("Nota: Usar If Anidado")
+            print("")
+            print("Ejercicio Incompleto:")
+            print("if 0<=pH<=4:")
+            print("""   print("Strong Acid")""")
+            print("else:")
+            print("   if 5<=pH<=6:")
+            print("""      print("Weak acid")""")
+            print("   else:")
+            print("      if 7==pH:")
+            print("""         print("Neutral")""")
+            print("      else:")
+            print("         if 8<=pH<=9:")
+            print("""                      print("Weak base")""")
+            print("         else:")
+            lineafaltante2 = input(" ")
+            print("""                      print("Strong base")""")
+            print("             else:")
+            print("""                print("valor de pH no válido)""")
+            contadorestructuraselectiva1 = 0
+            if lineafaltante1 == "else:":
+                contadorestructuraselectiva1 += 1
+            if lineafaltante2 == "if 10<=pH<=14:":
+                contadorestructuraselectiva1 += 1
+            if contadorestructuraselectiva1 == 2:
+                print("Muy bien, tuviste todo bien")
+            if contadorestructuraselectiva1 < 2:
+                print("Tuviste", contadorestructuraselectiva1, "/2 preguntas bien")
+    transicion_ifs_a_loops=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_ifs_a_loops=="":
+     loops()
+    elif transicion_ifs_a_loops=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_ifs_a_loops=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+
+#loops 
+def loops():
+  print("\n\n---------------------\nSECCION 3: Estructuras de Control Repetitivas\n---------------------")
+  print("\nDefinición:\nUna estructura de control repetitiva, también llamada bucle, es un comando utlizado en Python para repetir una serie de instrucciónes. En otras palabras se utiliza para iterar una grupo de elementos por una cantidad de veces.")
+ 
+  print("\nHay dos maneras de formar un bucle. \nLa primera es utilizando el comando 'while'. \nMientras que la segunda es utilizando el comando 'for'")
+ 
+  print("\nBucle While: \nEn este caso se utiliza un contador para determinar el numero de veces que se iterara.\n\nEjemplo:\n\ni = 0\nwhile i < 5:\n\tprint('Hello World')\n\ti = i + 1")
+  print("Output:")
+  iter_loops = 0
+  while iter_loops < 5:
+	  print('Hello World')
+	  iter_loops = iter_loops + 1
+  
+  print("\n\nBucle Iterante: \nEn este caso se utiliza el comando for para definir una variable dentro de un rango, string o lista.\n\nEjemplo:\n\nnumeros = [1,10,20,30,40,50]\nsuma = 0\nfor numero in numeros:\n\tsuma = suma + numero\n\tprint(suma)")
+  print("Output:")
+  numeros_iterantes_loops = [1,10,20,30,40,50]
+  suma_iterante_loops = 0
+  for numeros_iterantes_loops in numeros_iterantes_loops:
+    suma_iterante_loops = suma_iterante_loops + numeros_iterantes_loops
+    print (suma_iterante_loops)
+  
+  print("\nBucle Anidado:\nEn este caso como con las esctructuras de control selectivas, los bucles se pueden anidar para generar diferentes indicaciones.\n\nEjemplo:\n\nfor x in range(1, 3):\n\tfor y in range(1, 5):\n\t\tprint(x*y)")
+  print("Output:")
+  for x_loops in range(1, 3):
+	  for y_loops in range(1, 5):
+	    print(x_loops*y_loops)
+  
+  print("\nAhora vamos a los ejercicios.\n\nEjercicio 1:\n¿Cúal sera el output del codigo a continuación?\n\nlista=[1,2,3,7,11,13,17,19]\nsuma=0\nfor i in lista:\n\tsuma=suma+i\nprint(suma)")
+  res_ejercicio1_loops=input("Ingrese su respuesta aquí:")
+  contador_loops=0
+  if res_ejercicio1_loops=="73":
+    print("\nMuy Bien")
+    contador_loops=contador_loops+1
+  else:
+    print("\nLa respuesta era 73.\nEl codigo hace sumar los valores de la lista.")
+  time.sleep(3)
+  print("\n\nEjercicio 2:\n¿Cúal sera el output del codigo a continuación?\n\ncontador = 5\nwhile contador<=10 :\n\tprint contador\n\tcontador=contador+3")
+  res_ejercicio2_loops=input("Ingrese su respuesta aquí:")
+  if res_ejercicio2_loops=="8":
+    print("\nMuy Bien")
+    contador_loops=contador_loops+1
+  else:
+    print("\nLa respuesta era 8.\nEl codigo solo da una vuelta.")
+  time.sleep(3)
+  print("\n\nEjercicio 3:\n¿Cúal sera la suma de los numeros del output del codigo a continuación?\n\nn=0\nwhile n<5:\n\tn=n+1\n\tfor i in range(3):\n\t\tprint(n+i)")
+  res_ejercicio3_loops=input("Ingrese su respuesta aquí:")
+  if res_ejercicio3_loops=="60":
+    print("\nMuy Bien")
+    contador_loops=contador_loops+1
+  else:
+    print("\nLa respuesta era 60.\nEl codigo es anidado. La secuencia del bucle while itera cada vez que hay tres iteraciones en el bucle for.")
+  time.sleep(3)
+  print(f"\nTuviste {contador_loops} respuestas buenas.")
+  if contador_loops==3:
+    print("Entendiste a la perfección. Puedes pasar a la siguiente parte.")
+  elif contador_loops==2:
+    print("Has entendido casi todo. Si deseas mayor informacion puedes ir a\n http://www.pythonforbeginners.com/loops/for-while-and-nested-loops-in-python")
+    time.sleep(3)
+    print("Aun así has logrado el requerimiento para la siguiente parte.")
+  else:
+    print("Deberias volver a leer el codigo, ingresa 'reinicar'")
+  time.sleep(3)
+  fin_loops=input("¿Desea salir, continuar o reiniciar seccion?")
+  if fin_loops=="salir":
+      instrucciones()
+  elif fin_loops=="continuar":
+    lectura_listas()
+  elif fin_loops=="reiniciar":
+    loops()
+  else:
+    print("Error\nIngrese 'salir', 'continuar' o 'reiniciar'")      
+
+#Listas
+def lectura_listas():
+    print("\n---------------------"
+          "\nSECCIÓN 4: LISTAS"
+          "\n---------------------")
+    time.sleep(1)
+    print(
+        "\nUna lista puede definirse como una estructura de datos que permite agrupar una secuencia de datos en una sola variable para su acceso por posición."
+        "\nLa lista puede ser escrita por valores separados por coma (ítems) entre corchetes."
+        "\nNo es necesario que los ítems de una lista tengan todos el mismo tipo."
+        "\n Una lista tiene elementos desde 0 a N-1; siendo N la cantidad de elementos"
+        "\nEjemplo:"
+        "\nlist=[valor1,valor2,valor3,...,valorN]")
+    print("Por lo tanto el primer elemento de la lista es 0, el segundo elemento de la lista es 1, el tercer elemento de la lista es 3, asi consecutivamente hasta el número total de elementos.")
+    e=input()
+    print("\n-------------------------"
+          "\nOperaciones con listas:"
+          "\n-------------------------"
+          "\n Para crear o asignar elementos a una lista se utiliza el comando: list.append(valor); donde list es el nombre de la lista y valor es el elemento que desea agregar a la lista"
+          "\n"
+          "\n lista1=['A','B','C']"
+          "\n print(lista1)"
+          "\n>>['A','B','C']"
+          "\n"
+          "\n lista1.append('D')"
+          "\n print(lista1)"
+          "\n>>['A','B','C','D']")
+    e=input()
+    print(
+          "\n Para copiar listas debemos:"
+          "\n"
+          "\n lista1=['A','B','C']"
+          "\n lista2 = lista1"
+          "\n print(lista1, lista2)"
+          "\n>>['A','B','C'] ['A','B','C']"
+          "\n"
+          "\n lista1 = ['A','C']"
+          "\n print(lista1, lista2)"
+          "\n>>['A','C'] ['A','B','C']")
+    e=input()
+    print("Además, se pueden insertar elementos en una lista utilizando el comando:"
+          "\nlist.insert(n,elemento); donde list es el nombre de la lista, n es el número de posición de la lista y el elemento es la variable de cualquier tipo que deseas insertar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.insert(1,'Juan')"
+          "\nprint(nombres)"
+          "\n>>['Pepe','Juan','Dora']")
+    e=input()
+    print("\n"
+      "\nTambién se pueden buscar elementos en una lista utilizando el comando:"
+          "\nlist.index(elemento); donde list es el nombre de la lista y el elemento es la variable de cualquier tipo que deseas insertar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nif 'Pepe' in nombres:"
+          "\n   n=nombres.index('Pepe')"
+          "\nelse:"
+          "\n   n= -1"
+          "\nprint(n)"
+          "\n>>0")
+    print("El valor de n es 0 por que el string Pepe esta en la posición 0 de la lista nombres.")
+    e=input()
+    print("\n"
+          "\nPara la eliminación de elementos en lista se utiliza el comando:"
+          "\nlista.pop(n); siento lista el nombre de la lista y n la posición del elemento que se desea eliminar"
+          "\nlista.remove(elemento); siendo lista el nombre de la lista y elemento la variable que se desea eliminar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.pop(0)"
+          "\nprint(nombres)"
+          "\n>>['Dora']"
+          "\n"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.remove('Pepe'))"
+          "\nprint(nombres)"
+          "\n>>['Dora']")
+    e=input()
+    print("Operaciones con listas:"
+          "\nFunciones(siendo list el nombre de la lista):"
+          "\n sum(list); para sumar la lista"
+          "\n max(list); para hallar el elemento máximo"
+          "\n min(list); para hallar el elemento mínimo"
+          "\n list.sort(list); para ordenar la lista"
+          "\n len(list); para saber la cantidad de variables dentro de la lista"
+          "\n"
+          "\nEjemplos:"
+          "\nanimales=['gato','puma','león','tigre']"
+          "\nvalor= len(animales)"
+          "\n>>4")
+    a=input()
+    if a=="":
+      ejercicios_listas_simples()
+      time.sleep(1)
+      lectura_listas_anidadas()
+def ejercicios_listas_simples():
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  print("--------------------------"
+  "\nEJERCICIOS LISTAS:"
+  "\n--------------------------")
+  time.sleep(1)
+  print("Vamos a practicar la identificación de listas simples"
+  "\nPara ello vamos a mostrarle varias listas y usted tendrá que escribir Verdadero(V) o False (F) según corresponda:"
+  "\n")
+  puntos_listas_simples=0
+  cont=0
+  time.sleep(1)
+  print("¿Es una lista?")
+  print("\na) list=[2,3,4,5,6]")
+  p_list_simple1=input("Tipo: ")
+  print("\nb) apple:[1,2,3,4,5]")
+  p_list_simple2=input("Tipo: ")
+  print("\nc) game=(1,3,4,5)")
+  p_list_simple3=input("Tipo: ")
+  print("\nd) animals={'gato','perro'}")
+  p_list_simple4=input("Tipo: ")
+  print("\ne) frutas=['rojo','verde','azul']")
+  p_list_simple5=input("Tipo: ")
+
+  if p_list_simple1 in True_V:
+     puntos_listas_simples += 1
+  if p_list_simple2 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple3 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple4 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple5 in True_V:
+      puntos_listas_simples += 1
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_listas_simples, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_listas_simples == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_listas_simples < 6:
+    print("¿Quieres seguir practicando?¿Ir al menu o continuar?")
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_listas_simples()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        instruccion()
+      else:
+        print("Error.Responde")
+def lectura_listas_anidadas():
+  print("\n---------------"
+  "\nListas anidadas"
+  "\n-----------------"
+  "\n"
+  "\nLas listas anidadas son listas dentro de otras listas."
+  "\n Ejemplo:"
+  "colores=[['azul','amarillo'],['verde'],['rojo','naranja'],]"
+  "\nPara utilizar un valor de estas listas de utiliza corchetes []."
+  "\nDe forma Nombre_de_lista[posición1][posición2]"
+  "\n"
+  "\nEjemplo:"
+  "\n Alumnos = [['Kike',8],['Jhon',20],['Tyler',18]"
+  "\n for i in range(len(Alumnos)):"
+  "\n     print(Alumnos[i][1])"
+  "\n>>8"
+  "\n>>20"
+  "\n>>18")
+  a=input()
+  if a =="":
+    ejercicios_listas_anidadas()
+    time.sleep(1)
+    lectura_listas_tuplas()
+def ejercicios_listas_anidadas():
+  print("--------------------------"
+  "\nEJERCICIOS DE LISTAS ANIDADAS :"
+  "\n--------------------------")
+  print("Vamos a practicar el tipo de anidadas "
+  "\nPara ello vamos a mostrarle varios listas y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  time.sleep(1)
+  puntos_int=0
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  pruebaint1=input("lista=[2,3,[2],{1}] ")
+  pruebaint2=input("animal_1={1,[2,3],3} ")
+  pruebaint3=input("plant:['vida','naturaleza'] ")
+  pruebaint4=input("lista1=[gato,perro]")
+  pruebaint5=input("notas=[['Juan',20],['Pablo',18],['Pepe',16]] ")
+  if pruebaint1 in False_F:
+     puntos_int += 1
+  if pruebaint2 in False_F:
+      puntos_int += 1
+  if pruebaint3 in False_F:
+      puntos_int += 1
+  if pruebaint4 in False_F:
+      puntos_int += 1
+  if pruebaint5 in True_V:
+      puntos_int += 1
+  cont=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_int, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_int == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_int < 6:
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_listas_anidadas()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        instrucciones()
+      else:
+        print("Error.Responde")
+#tuplas
+def lectura_listas_tuplas():
+  print(""
+  "\n-----------"
+  "\nLas Tuplas"
+  "\n-----------")
+  time.sleep(1)
+  print("\nLas tuplas son otro tipo de estructura de datos."
+  "\n Tienen las mismas caracteristicas que una lista, solo que se utiliza paréntesis () en vez de corchetes[]."
+  "\n"
+  "\nEjemplo:"
+  "\n tupla_ejemplo = (1,3,6,9)"
+  "\nprint(tupla_ejemplos)"
+  "\n>>(1,3,6,9)"
+  "\n"
+  "\nprint(max(tupla_ejemplos))"
+  "\n>>9")
+  e=input()
+  print("A diferencia de una lista que si es posible alterar su contenido, una vez que se crea una tupla, no se puede alterar su contenido. "
+  "\n"
+  "\ntupla_ejemplo = (1,2,3)"
+  "\ntupla[2] = 0"
+  "\n>>TypeError: 'tuple' object does not support ítem assignment")
+  e=input()
+  print(
+    "\nLas tuplas tienen un procedimiento para el unpacking de sus valores, es decir, para que cada valor pueda ser desempaquetado a variables o parámetros."
+    "\n"
+    "\nEjemplos:"
+    "\ntupla_ejemplo = (1, 2, 3, 4)"
+    "\nprint(tupla)"
+    "\n>>(1, 2, 3, 4)"
+    "\n"
+    "\ndef imprime_tupla(a, b, c, d):"
+    "\n    print(a, b, c, d)"
+    "\ntupla = (1, 2, 3, 4)"
+    "\nprint(imprime_tupla(tupla))"
+    "\n>>TypeError: fun() missing 3 required positional arguments: 'b', 'c', and 'd'"
+    "\n"
+    "\n#correctamente se utiliza el *"
+    "\nprint(imprime_tupla(*tupla))"
+    "\n>>1 2 3 4")
+  e=input()
+  print("Para realizar una asignación, podemos poner una tupla en el lado izquierdo."
+  "\n"
+  "\nEjemplos:"
+  "\n (x,y) = 50, 'pepe'"
+  "\nprint(y)"
+  "\n>>pepe"
+  "\n"
+  "\n (d,f) = (50, 34)"
+  "\nprint(d)"
+  "\n>>50")
+  e=input()
+  print("Tambien se puede comparar tuplas utilizando operadores. Si el primer elemento es igual, Python pasa al siguiente elemento, y así sucesivamente, hasta encontrar elementos que difieren. Cuando se traba de letras se utiliza el orden de alfabeto. Cuando la comparación es correcta, se le nombre True y cuando es incorrecta False"
+  "\nLos signos son;"
+  "\n-mayor que (>)"
+  "\n-menor que (>)"
+  "\n-igual que (==)"
+  "\n-desigual (!=)"
+  "\n"
+  "\nEjemplos:"
+  "\nx = ('Jones', 'Sally') > ('Adams', 'Sam')"
+  "\nprint(x)"
+  "\n>>True"
+  "\n"
+  "\n a= (0, 1, 2000) < (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>True"
+  "\n"
+  "\n a= (0, 1, 2000) == (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>False"
+  "\n"
+  "\n a= (0, 1, 4) != (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>True")
+  a=input()
+  if a == "":
+    ejercicios_listas_tuplas()
+    time.sleep(1)
+    ejercicios_listas_tuplas2()
+def ejercicios_listas_tuplas():
+  print("--------------------------"
+  "\nEJERCICIOS DE TUPLAS :"
+  "\n--------------------------")
+  print("Vamos a practicar esta nueva estructura de datos. "
+  "\nPara ello vamos a mostrarle varios enunciados y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_tuplas1=0
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  pruebatupla1=input("Los valores dentro de las tuplas pueden modificarse: ")
+  pruebatupla2=input("Se pueden utilizar operadores comunes (<,>,==,!=) para comparar tuplas: ")
+  pruebatupla3=input("gallo=['verde','rojo','amarillo'] es una Tupla")
+  pruebatupla4=input("Se pueden imprimir las tuplas con el comando:" 
+  "\nfor i in range(len(tupla)):"
+  "\n   print(tupla[i])"
+  "\n:")
+  pruebatupla5=input("Se necesita el * para desempaquetar las tuplas")
+  if pruebatupla1 in False_F:
+     puntos_tuplas1 += 1
+  if pruebatupla2 in True_V:
+      puntos_tuplas1 += 1
+  if pruebatupla3 in False_F:
+      puntos_tuplas1 += 1
+  if pruebatupla4 in False_F:
+      puntos_tuplas1 += 1
+  if pruebatupla5 in True_V:
+      puntos_tuplas1 += 1
+  cont=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_tuplas1, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_tuplas1 == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_tuplas1 < 6:
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        cont=1
+        seguir_practicando = "s"
+        ejercicios_listas_tuplas()
+      elif seguir_practicando =="continuar":
+        cont=1
+        ejercicios_listas_tuplas2()
+      elif seguir_practicando=="menu":
+        cont=1
+        instrucciones()
+      else:
+        print("Error.Responde")
+def ejercicios_listas_tuplas2():
+  print("\n--------------------------"
+  "\nEJERCICIOS DE TUPLAS 2 :"
+  "\n--------------------------"
+  "\n")
+  time.sleep(1)
+  print("\nComo superaste el primer nivel de tuplas, ahora podras intentar pasar este segundo nivel."
+  "\n"
+  "\nEjercicio:"
+  "\nEl programa dado permite identificar si el elemento ingresado pertenece a la tupla. Tu trabajo será encontrar el error e ingresar el codigo correcto")
+  print("\nTupla = ('w','3','r','e','s','o','u','r','c','e',45','17','a')"
+  "\nelemento=input()"
+  "\nif elemento in Tupla:"
+  "\n   print('Si se encuentra en la tupla')"
+  "\n")
+  prueba_tupla21=input("¿Hay algun error?: ")
+  if prueba_tupla21=="si" or "yes" or "Si" or "SI":
+      puntos_tuplas = 0
+  if prueba_tupla21=="no" or "NO" or "No":
+      puntos_tuplas = 1
+  else:
+    print("Responde (si/no)")
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_tuplas, "pregunta correcta de 1"
+  "\n----------------------------------")
+  conta=0
+  if puntos_tuplas == 1:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_tuplas < 3:
+    while conta==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        conta=1
+        seguir_practicando = "s"
+        ejercicios_listas_tuplas2()
+      elif seguir_practicando =="continuar":
+        conta=1
+        lectura_diccionarios()
+      elif seguir_practicando=="menu":
+        conta=1
+        instrucciones()
+      else:
+        print("Error.Responde")
+#Diccionarios
+def lectura_diccionarios():
+  print("Los diccionarios sirven para almacenar información, ordenar información y buscar información."
+  "\nCada diccionario esta compuesto por pares de datos;"
+  "\nUn campo llave, pra hacer una búsqueda y nos permita luego manipular el registro."
+  "\nUn campo valor, para almacenar cualquier tipo de dato"
+  "\nPara crear un diccionario en Python utilizamos llaves {}"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo = {}"
+  "\nDiccionario_ejemplo2 = {'Ron':19,'Pepe':20,'Juan':18}"
+  "\n~Siendo Ron la primera llave y 19 el primer valor. Consecutivamente Pepe la segunda llave y 20 el segundo valor.")
+  e=input()
+  print("La búsqueda es similar a una lista, la diferencia por ser diccionario es ingresar el campo llave y te retorna el campo valor pero si no encuentra la llave retorna error."
+    "\n"
+    "\nEjemplo:"
+    "\nDiccionario_ejemplo3 = {'a':1,'b':2,'c':3}"
+    "\nprint(Diccionario_ejemplo3['c']"
+    "\n>>3"
+    "\n"
+    "\nDiccionario_ejemplo4 = {'Alvaro':29,'Cesar':34,'Pablo':12}"
+    "\nprint(Diccionario_ejemplo4['Antonio'])"
+    "\n>>KeyError: 'Antonio'")
+  e= input()
+  print("Operaciones con diccionarios:"
+        "\nPara hacer un registro al diccionario.Se debe usar los corchetes [], escribiendo dentro la nueva llave y luego = al nuevo valor."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo5 = {'Adam':45,'Sandler':34,'Wilson':21}"
+        "\nDiccionario_ejemplo5['Juan'] = 10"
+        "\nprint(Diccionario_ejemplo5)"
+        "\n>>{'Adam':45,'Sandler':34,'Wilson':21,'Juan':10}"
+        "\n"
+        "\nPara verificar si existe una llave en el diccionario se utiliza el comando -variable in Diccionario-; donde variable es la llave que se busca y Diccionario es el nombre del diccionario."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo6 = {'Ant':45,'Seal':34,'Wanda':21}"
+        "\na = 'Ant' in Diccionario_ejemplo6"
+        "\nprint(a)"
+        "\n>>True"
+        "\nb = 'Bear' in Diccionario_ejemplo6"
+        "\nprint(b)"
+        "\n>>False")
+  e=input()
+  print("Para obtener todas las llaves de una tupla debemos usar el comando Nombre_de_Diccionario.keys() o para obtener todos los valores usar Nombre_de_Diccionario.values()"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo7= {'Rocio'16:,'Álvaro'18:,'Katherine':17,'Jorge':19}"
+  "\ntupla_keys = Diccionario_ejemplo7.keys()"
+  "\nprint(tupla)"
+  "\n>>dict_keys(['Rocio', 'Álvaro', 'Katherine','Jorge'])"
+  "\n"
+  "\ntupla_values = Diccionario_ejemplo7.values"
+  "\nprint(tupla_values)"
+  "\n>>dict_values([16, 18, 17, 19])")
+  e=input()
+  print("Existen caracteristicas relevantes acerca de las llaves y los valores"
+  "\n Las llaves:"
+  "\n -Deben ser valores únicos"
+  "\n -Tipo de dato inmutable(int,float,string,tuple,bool)"
+  "\n"
+  "\n Los valores:"
+  "\n -Cualquier tipo de dato(inmutable o mutable)"
+  "\n -Pueden ser valores duplicados")
+  e=input()
+  print("Para agregar un elemento a un diccionario podemos usar el comando Nombre_del_diccionario.update({llave:valor})"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo8 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nDiccionario_ejemplo8.update({'universidad':'Utec'})"
+  "\nprint(Diccionario_ejemplo8)"
+  "\n>>{'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30,'universidad':'Utec'")
+  e=input()
+  print("Para borrar elementos a un diccionario se utiliza el comando Nombre_de_Diccionario.delete({llave:valor}) o Nombre_de_Diccionario[llave]"
+  "\n"
+  "\nEjemplos:"
+  "\nDiccionario_ejemplo9 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nDiccionario_ejemplo9.delete({'sección':12})"
+  "\nprint(Diccionario_ejemplo9)"
+  "\n>>{'profe':'Maria','laboratorio':603,'alumnos':30}"
+  "\n"
+  "\ndel Diccionario_ejemplo9['alumnos']"
+  "\nprint(Diccionario_ejemplo9)"
+  "\n>>{'profe':'Maria','laboratorio':603,}")
+  e=input()
+  print("Para recorrer un diccionario, es decir, separar los valores de las llaves o los items se utilizan estructuras de control repetitivas;"
+  "\nfor valor in Nombre_de_Diccionario:"
+  "\n   print(valor)"
+  "\nfor valor in diccionario.items():"
+  "\na  print(valor)"
+  "\n"
+  "\nEjemplos:"
+  "\nDiccionario_ejemplo10 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nfor valor in Diccionario_ejemplo10:"
+  "\n   print(valor)"
+  "\n>>profe"
+  "\n>>sección"
+  "\n>>laboratorio"
+  "\n>>alumnos"
+  "\n"
+  "\nfor valor in Diccionario_ejemplo10.items():"
+  "\n   print(valor)"
+  "\n>>('profe','Maria')"
+  "\n>>('sección',12}"
+  "\n>>('laboratorio',603)"
+  "\n>>('alumnos',30)")
+  a=input()
+  if a =="":
+    ejercicios_diccionarios()
+def ejercicios_diccionarios():
+  print("--------------------------"
+  "\nEJERCICIOS DE DICCIONARIOS :"
+  "\n--------------------------")
+  print("Vamos a practicar esta estructura de datos. "
+  "\nPara ello vamos a mostrarle varios enunciados y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_diccionario1=0
+  True_V = ["True", "T", "t", "true","V","v","Verdadero"]
+  False_F = ["Falso", "false", "F", "f",]
+  pruebatupla1=input("Los diccionarios son estructuras de datos Repetitivas")
+  pruebatupla2=input("Se pueden utilizar operadores comunes (<,>,==,!=) para comparar tuplas: ")
+  pruebatupla3=input("Se pueden repetir llaven dentro de un diccionario")
+  pruebatupla4=input("Los valores de los diccionarios no pueden ser cambiados")
+  pruebatupla5=input("lista={'pepe':12,'maria':34} es un diccionario")
+  if pruebatupla1 in False_F:
+     puntos_diccionario1 += 1
+  if pruebatupla2 in True_V:
+      puntos_diccionario1 += 1
+  if pruebatupla3 in True_V:
+      puntos_diccionario1 += 1
+  if pruebatupla4 in False_F:
+      puntos_diccionario1 += 1
+  if pruebatupla5 in True_V:
+      puntos_diccionario1 += 1
+  conte=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_diccionario1, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_diccionario1 == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_diccionario1 < 6:
+    while conte==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        conte=1
+        seguir_practicando = "s"
+        ejercicios_diccionarios()
+      elif seguir_practicando =="continuar":
+        conte=1
+        lectura_función()
+      elif seguir_practicando=="menu":
+        conte=1
+        instrucciones()
+      else:
+        print("Error.Responde")
+
+#funciones
+def lectura_función():
+    print("Una función es un conjunto de instrucciones que realizan alguna tarea y esta tarea va a invocar más de una vez un mismo programa.")
+    print("a) Pueden recibir o no parámetros")
+    print("b) Pueden retornar un valor o pueden no retornar ningun valor")
+    print("""Para escribir una función se tiene que comenzar la función con la palabra "def" """)
+    print("")
+    print("Ejemplo:")
+    print("def DoSomething():")
+    print("    value = 1")
+    print("    return value")
+    print("")
+    print("""En este caso se crea la función utilizando la palabra "def". \n Luego, se nombra la función.\n Se le manda una labor que hacer a la función, la cual recibe un valor de uno y, \n finalmente, se retorna el valor asignado. """)
+    print("")
+    print("Hay que principalmente tener cuidado con algunas cosas")
+    print("")
+    print("1) siempre define tu función")
+    print("""2) Acuerdate que el nombre de tu función tiene que ser una sola palabra. Puede tener "_", "-", "/" o cualquier otro caracter para unir palabras pero no pueden haber espacios entre palabras """)
+    print("3) siempre tienen que haber brackets al terminar de escribir la función")
+    print("""4) La función siempre tiene que terminar con la palabra "return" """)
+    print("5) Si se quiere llamar a la función, se tiene que escribir su nombre afuera")
+    print("")
+    print("Otro ejemplo:")
+    print("")
+    print("Cree una función la cual cambie grados centigrados a Kelvin")
+    print("")
+    print("def fahr_to_Kelvin(temp):")
+    print("   return((temp-32)*(5/9))")
+    print("""temperatura=int(input("Ingresa tu temperatura en farenheit":))""")
+    print("""print("fahr_to_kelvin(temperatura)""")
+    print("")
+    print("")
+    print("También se pueden utilizar funciones dentro de funciones")
+    print("Un ejemplo es la función print")
+    print("Si se escribe la función print dentro de una función se estaría imprimiendo el valor indicado")
+    print("")
+    print("Por ejemplo:")
+    print("")
+    print("")
+    print("def licencia():")
+    print("""    print("Copyright 2017")""")
+    print("""    print("AUS204")""")
+    print("      return")
+    print("licencia()")
+    print("")
+    print("")
+    print("Otro probelam que se puede encontrar con las funciones es la definición de las variables. Acá hay una función ara ilustrarlo:")
+    print("")
+    print("def escribe_suma():")
+    print("    suma=a+b")
+    print("""    print("La suma de {a} y {b} es: {suma}")""")
+    print("    return")
+    print("a=4")
+    print("b=5")
+    print("escribe_suma()")
+    print("")
+    print("")
+    print("El problema de esta función es que los valores son muy específicos ya que la función solo funcionaría con los valores a y b. Además siempre va a imprimir el resultado, lo cual no siempre es útil")
+    print("Esto puede solucionarse")
+    print("")
+    print("Aca está la función mejorada:")
+    print("")
+    print("")
+    print("def escribe_suma(x,y):")
+    print("    suma=x+y")
+    print("    return suma")
+    print("a=4")
+    print("b=5")
+    print("escribe_suma(a,b)")
+    print("""print(f"La suma de {a} y {b} es: {suma}") """)
+    print("")
+    print("¿Vez la diferencia?")
+    print("El último programa es más general y por lo tanto más reutilizable ya que generaliza algunos términos")
+    print("")
+    print("Un último ejemplo")
+    print("")
+    print("")
+    print("lado = 0")
+    print("def main():")
+    print("    lado = int(input())")
+    print("    print(cuadrado_área())")
+    print("    return")
+    print("")
+    print("def cuadrado_área():")
+    print("    return lado**2")
+    print("")
+    print("")
+    print("Ya que la variable lado esta afuera de los scopes de las otras funciones, se puede utilizar en ambas funciones y puede ser accedida por cualquier parte")
+    print("Sino, se tendría que variar la variable lado a otra variable para la función cuadrado_area")
+    time.sleep(3)
+    transicion_ejercicio_funciones=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_ejercicio_funciones=="":
+      ejercicio_funciones()
+    elif transicion_ejercicio_funciones=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_ejercicio_funciones=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def ejercicio_funciones():
+    print("Ahora, harás un pequeño quiz para ver si has comprendido el tema de funciones. Tienes que escribir el output de los siguientes códigos:")
+    print("")
+    print("Constrains: Ingresa solo el número")
+    print("")
+    print("Numero 1 ,Función 1:")
+    print("")
+    print("")
+    print("def f(x):")
+    print("    return g(x)+h(x)")
+    print("")
+    print("def g(x):")
+    print("    return 4*h(x)")
+    print("")
+    print("def h(x):")
+    print("    return x**2")
+    print("")
+    print("print(f(2))")
+    print("")
+    output1funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("Numero 2 ,Función 1:")
+    print("")
+    print("")
+    print("def f(x):")
+    print("    return g(x)+h(x)")
+    print("")
+    print("def g(x):")
+    print("    return 4*h(x)")
+    print("")
+    print("def h(x):")
+    print("    return x**2")
+    print("")
+    print("print(f(3))")
+    print("")
+    output2funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("Numero 3 ,Función 1:")
+    print("")
+    print("")
+    print("def f(x):")
+    print("    return g(x)+h(x)")
+    print("")
+    print("def g(x):")
+    print("    return 4*h(x)")
+    print("")
+    print("def h(x):")
+    print("    return x**2")
+    print("")
+    print("print(f(1))")
+    print("")
+    output3funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("")
+    print("Numero 1 , Función 2")
+    print("")
+    print("")
+    print("def funcion_misteriosa(n):")
+    print("    suma = 0")
+    print("    for i in range(n):")
+    print("        suma=suma+i")
+    print("    return(suma)")
+    print("")
+    print("print(funcion_misteriosa(4))")
+    print("")
+    output4funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("Numero 2 , Función 2")
+    print("")
+    print("")
+    print("def funcion_misteriosa(n):")
+    print("    suma = 0")
+    print("    for i in range(n):")
+    print("        suma=suma+i")
+    print("    return(suma)")
+    print("")
+    print("print(funcion_misteriosa(8))")
+    print("")
+    output5funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("Numero 3 , Función 2")
+    print("")
+    print("")
+    print("def funcion_misteriosa(n):")
+    print("    suma = 0")
+    print("    for i in range(n):")
+    print("        suma=suma+i")
+    print("    return(sum)a")
+    print("")
+    print("print(funcion_misteriosa(6))")
+    print("")
+    output6funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("")
+    print("Numero 1, Función 3")
+    print("")
+    print("")
+    print("")
+    print("def funcion_x(variable):")
+    print("    contador = 0")
+    print("    for i in variable:")
+    print("        if i in ['a', 'e','i','o','u']:")
+    print("            contador=contador + 1")
+    print("    return contador")
+    print("")
+    print("print(funcion_x(['amigo'])")
+    print("")
+    output7funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("")
+    print("Numero 2, Función 3")
+    print("")
+    print("")
+    print("")
+    print("def funcion_x(variable):")
+    print("    contador = 0")
+    print("    for i in variable:")
+    print("        if i in ['a', 'e','i','o','u']:")
+    print("            contador=contador + 1")
+    print("    return contador")
+    print("")
+    print("print(funcion_x(['hasta'])")
+    print("")
+    output8funciones = input("Ingresa el output de la función: ")
+    print("")
+    print("")
+    print("")
+    print("Numero 3, Función 3")
+    print("")
+    print("")
+    print("")
+    print("def funcion_x(variable):")
+    print("    contador = 0")
+    print("    for i in variable:")
+    print("        if i in ['a', 'e','i','o','u']:")
+    print("            contador=contador + 1")
+    print("    return contador")
+    print("")
+    print("print(funcion_x(['Soy un hacker'])")
+    print("")
+    output9funciones = input("Ingresa el output de la función: ")
+    contador_funciones = 0
+    if output1funciones == "20":
+        contador_funciones += 1
+    if output2funciones == "45":
+        contador_funciones += 1
+    if output3funciones == "5":
+        contador_funciones += 1
+    if output4funciones == "6":
+        contador_funciones += 1
+    if output5funciones == "28":
+        contador_funciones += 1
+    if output6funciones == "15":
+        contador_funciones += 1
+    if output7funciones == "3":
+        contador_funciones += 1
+    if output8funciones == "2":
+        contador_funciones += 1
+    if output9funciones == "4":
+        contador_funciones += 1
+    if contador_funciones == 9:
+        print("Muy bien, sacaste todo bien")
+    else:
+        print("sacaste ",contador_funciones,"/sobre 9 preguntas bien")
+    transicion_funciones_a_creditos=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_funciones_a_creditos=="":
+      creditos()
+    elif transicion_funciones_a_creditos=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_funciones_a_creditos=input("Presione enter para finalizar o escriba 'salir' para ir al inicio: ")
+
+#strings
+def lectura_strings():
+    print("Un string es una cadena de caracteres. Esta generalmente está ordenada.\n Estas cadenas también,como las listas, tienen ciertos valores asignados. Por ejemplo, en la cadena: Monty Python, la M tendría el valor 0 y la P el valor 6, \n ")
+    print("Entonces, si pusiera el texto:\n s = Monty Python \n print(s[2]) \n el output sería la letra n \n")
+    print("Para delimitar tu cadena, necesitas poner el texto entre comillas simples, comillas dobles o comillas triples. Esto identificaría a un string. \n  ")
+    print("""Tambén, existen muchos operadores con los strings. \nla expresión %d puede determinar un entero, %s un string y %f un float \n\nPor ejemplo:\n text = "%d tigres comen % 1f porción de %s en un %s (3, 0.5, 'trigo') \n print(text) \n \n   """)
+    print("""Además, si se quiere utilizar un número en una cadena se debe concatenar la expresión utilizando la variable: str() 
+    \nPor ejemplo: \n pi = 3.14 \n text = 'El valor de pi es: ' + str(pi)""")
+    print("""Otras funciones que se pueden utilizar son: \n \nlen(): para hallar el largo de un string o cantidad de caracteres \n len('Esta es una frase') daría de output 17 \n\nfind: para determinar si un string está dentro de otro string. Devuelve el indice donde este string es hallado \n 'Esta es una frase'.find("frase") da de output 12 \n Si es que no se logra encontrar el string buscado,el programa devolverá -1 \n \nreplace: reemplaza el string a buscar por el indicado dentro del string grande \n 'Este es un string'.replace(string,String) da de output: Este es un String \n\njoin(): devuelve una cadena de texto donde los valores de la cadena original que llama el join aparecen separados por un caracter que fue pasado al join() como argumento\n s= "Escribe una frase" \n print(",".join(s)) \n da como output: E,s,c,r,i,b,e, ,u,n,a, ,f,r,a,s,e \n \nsplit(): aplicado a un string, crea una lista en la que cada elemento es una palabra del string\n S="Hola esta es una frase" \n s1, s2, s3, s4, s5 = s.split(' ') \n print(s1, s2) \n da de output: Hola esta\n \n \n""")
+    print("""Otras funciones: \n \n capitalize(): Capitaliza el primer caracter de la cadena \n lower(): Convierte la cadena en minúscula \n upper(): convierte la cadena en mayúscula \n strip(): elimina los espacios en blanco a los costaods \n backslash t: inserta un tabulado'""")
+    transicion_ejercicio_strings=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_ejercicio_strings=="":
+      ejercicio_strings()
+    elif transicion_ejercicio_strings=="salir":
+      creditos()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_ejercicio_strings=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def ejercicio_strings():
+    true_tupla = ("T","t","true","True")
+    false_tupla = ("F", "f", "false", "False")
+    print("")
+    print("Ahora es tu turno de practicar lo que son strings")
+    print("")
+    print("Pregunta 1")
+    print("")
+    print("¿Se puede separar un string en partes?")
+    respuesta_1_strings = input("Responde True o False: ")
+    print("")
+    print("Pregunta 2")
+    print("")
+    print("""¿ Si tengo el  código:
+    s = 'El numero pi es: ' + pi 
+    ¿Obtendría un output?""")
+    respuesta_2_strings = input("Responde True o False: ")
+    print("")
+    print("Pregunta 3")
+    print("")
+    print("""Teniendo el codigo:
+    "La vida es mucho mejor con Python".find("Python")
+    ¿El output sería 26?""")
+    respuesta_3_strings = input("Responde True o False: ")
+    print("")
+    print("Pregunta 4")
+    print("")
+    print("¿Se pueden unir dos strings?")
+    respuesta_4_strings = input("Responde True o False: ")
+    print("")
+    print("""Teniendo el codigo:
+          s= "soy un hacker"
+          print(",".join(s))
+          ¿Mi output sería: soy, un, hacker?""")
+    respuesta_5_strings = input("Responde True o False: ")
+    print("")
+    print("Pregunta 6")
+    print("")
+    print("¿Si utilizo la función find() y no encuentro la cadena buscada igual recibo un output?")
+    respuesta_6_strings = input("Responde True o False: ")
+    print("")
+    contador_strings = 0
+    if respuesta_1_strings in true_tupla:
+        contador_strings += 1
+    if respuesta_2_strings in false_tupla:
+        contador_strings += 1
+    if respuesta_3_strings in false_tupla:
+        contador_strings += 1
+    if respuesta_4_strings in true_tupla:
+        contador_strings += 1
+    if respuesta_5_strings in false_tupla:
+        contador_strings += 1
+    if respuesta_6_strings in true_tupla:
+        contador_strings += 1
+    print("tuviste ", contador_strings,"/6 bien")
+    print("¿Quieres volver a intentarlo?")
+    volver_a_intentar = input("Si quieres volver a intentarlo escribe la palabra si aca: ")
+    if volver_a_intentar == "si" or volver_a_intentar == "sí":
+        ejercicio_strings()
+    transicion_strings_creditos=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if transicion_strings_creditos=="":
+      algoritmos_ordenamiento()
+    elif transicion_strings_creditos=="salir":
+      creditos()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+      transicion_strings_creditos=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+
+#ordenamientos
+def algoritmos_ordenamiento():
+  print("---------------------\nSECCION 8: Algoritmos de Ordenamiento\n---------------------")
+  print("\nDefinición:\nUn algoritmo de ordenamiento es una serie de comandos usados para organizar una lista o equivalente, de menor a mayor o viceversa.")
+
+  print("\nAquí se explicara cuatro algoritmos de ordenamiento. Estos son:\n")
+  lista_algoritmos_ordenamiento=[
+    "Insertionsort",
+    "Mergesort",
+    "Bubblesort",
+    "Selectionsort"
+    ]
+  for iteracion_lista_ordenamiento in range(len(lista_algoritmos_ordenamiento)):
+    print(lista_algoritmos_ordenamiento[iteracion_lista_ordenamiento])
+  print("\nPara cada uno de estos el ordenamiento puede funcionar con listas simples o anidadas.\n")
+  ordenamiento_a_insertionSort=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if ordenamiento_a_insertionSort=="":
+    lectura_insertionSort()
+  elif ordenamiento_a_insertionSort=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    ordenamiento_a_insertionSort=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def lectura_insertionSort():
+  print("\n\nEn cuanto al insertionSort, este metodo funciona al igualar un valor de la lista en una variable. Luego se compara esta variable con el valor anterior en la lista. Dependiendo de lo que se desea se ve si es mayor o menor y se mueve o se queda en su lugar dependiendo de lo deseado.\n\nEjemplo:\n\ndef insertionSort(lista):\n\tfor i in range(1, len(lista)):\n\t\taux = lista[i]\n\t\tpos = i\n\t\twhile pos > 0 and lista[pos - 1] > aux:\n\t\t\tlista[pos] = lista[pos - 1]\n\t\t\tpos = pos - 1\n\t\tlista[pos] = aux\n\treturn lista")
+  insertionSort_a_mergeSort=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if insertionSort_a_mergeSort=="":
+    lectura_mergeSort()
+  elif insertionSort_a_mergeSort=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    insertionSort_a_mergeSort=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def lectura_mergeSort():
+  print("\nEn cuanto al mergeSort,este metodo consiste en separar la lista a la mitad y luego ordenar las mitades.Despues de esto se comparan los valores individuales dentro de ambas mitades para ordenarlos como se desea. Finalmente, se junta ambas listas ya ordenadas completamente. Así se obtiene la lista final ordenada de mayor a menor o viceversa.\n\nEjemplo:\n\ndef mergeSort(alist):\n\tprint('Splitting',alist)\n\tif len(alist)>1:\n\t\tmid = len(alist)//2\n\t\tlefthalf = alist[:mid]\n\t\trighthalf = alist[mid:]\n\t\tmergeSort(lefthalf)\n\t\tmergeSort(righthalf)\n\t\ti=0\n\t\tj=0\n\t\tk=0\n\t\twhile i < len(lefthalf) and j < len(righthalf):\n\t\t\tif lefthalf[i] < righthalf[j]:\n\t\t\t\talist[k]=lefthalf[i]\n\t\t\t\ti=i+1\n\t\t\telse:\n\t\t\t\talist[k]=righthalf[j]\n\t\t\t\tj=j+1\n\t\t\tk=k+1\n\t\twhile i < len(lefthalf):\n\t\t\talist[k]=lefthalf[i]\n\t\t\ti=i+1\n\t\t\tk=k+1\n\t\twhile j < len(righthalf):\n\t\t\talist[k]=righthalf[j]\n\t\t\t\tj=j+1\n\t\t\t\tk=k+1\n\tprint('Merging',alist)")
+  mergeSort_a_bubbleSort=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if mergeSort_a_bubbleSort=="":
+    lectura_bubbleSort()
+  elif mergeSort_a_bubbleSort=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    mergeSort_a_bubbleSort=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+def lectura_bubbleSort():
+  print("\nEn cuanto al bubbleSort, el metodo consiste en comparar un valor con el siguiente. De esta manera, si el primer valor es mayor al segundo, si se requiere ordenar creciente, el primero se iguala a una variable. Y se cambia la poscicion de el segundo al primero. Luego se inserta el primero en el segundo. \n\nEjemplo:\ndef bubbleSort(lista):\n\tfor num in range(0,len(lista)):\n\t\tfor j in range(num):\n\t\t\tif lista[j] > lista[j + 1]:\n\t\t\t\taux = lista[j]\n\t\t\t\tlista[j] = lista[j + 1]\n\t\t\t\tlista[j + 1] = aux\n\treturn lista")
+  bubbleSort_a_selectionSort=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if bubbleSort_a_selectionSort=="":
+    lectura_selectionSort()
+  elif bubbleSort_a_selectionSort=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    bubbleSort_a_selectionSort=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")  
+def lectura_selectionSort():
+  print("\nEl selectionSort funciona encontrando el valor minimo de la lista linealmente. Asi termina el valor minimo en la mano izquierda. Luego se comienza haciendo el mismo proceso con todos los valores expetuando la posicion ordenada la ultima vez y así sucesivamente, hasta ordenar toda la lista. Ese caso es de menor a mayor pero se podria cambiar de mayor a menor también.\n\nEjemplo:\n\ndef selectionSort(lista):\n\tfor i in range(len(lista)):\n\t\tmin = i\n\t\tfor j in range(i, len(lista)):\n\t\t\tif (lista[j]) < lista[min]:\n\t\t\t\tmin = j\n\taux = lista[i]\n\tlista[i] = lista[min]\n\tlista[min] = aux\n\treturn lista")
+  lecturas_ordenamiento_a_ejercicios=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if lecturas_ordenamiento_a_ejercicios=="":
+    ejer1_algoritmos_ordenamiento()
+  elif lecturas_ordenamiento_a_ejercicios=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    lecturas_ordenamiento_a_ejercicios=input("Presione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")  
+def ejer1_algoritmos_ordenamiento():
+  print("\nEjercicio 1:\ndef bubbleSort(lista):\n for num in range(0,len(lista)):\n   for j in range(num):\n      if lista[j]>lista[j+1]:\n        aux=lista[j]\n        lista[j]=lista[j+1]\n      lista[j+1]=aux\n  return lista\nL=[54,26,93,17,77,31,44,55,20]\nprint(bubbleSort(L))")
+  respuesta_ejer1_orden=input("Ingrese el numero de linea en donde se encuentra el error:")
+  if respuesta_ejer1_orden=="7":
+    print("La tuviste bien.")
+  else:
+    print("El error esta en la linea 7. Revisa el codigo.")
+  ejer1_ejer2_ordenamientos=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if ejer1_ejer2_ordenamientos=="":
+    ejer2_algoritmos_ordenamiento()
+  elif ejer1_ejer2_ordenamientos=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    ejer1_ejer2_ordenamientos=input("Presione enter para continuar o escriba 'salir' para ir al inicio:") 
+def ejer2_algoritmos_ordenamiento():
+  print("\nEjercicio 2:\ndef insertionSort(lista):\n  for i in range(1, len(lista)):\n    aux = lista[i]\n    pos = i\n    while pos > 0 and lista[pos - 1] < aux:\n       lista[pos] = lista[pos - 1]\n       pos = pos - 1\n    lista[pos] = aux\n  return lista")
+  respuesta_ejer2_orden=input("¿Este algoritmo ordena de 'menor a mayor' o de 'mayor a menor'?: ")
+  opciones_correctas_respuesta_ejer2_orden=["Mayor a Menor","mayor a menor","decreciete"]
+  if respuesta_ejer2_orden==opciones_correctas_respuesta_ejer2_orden[0] or respuesta_ejer2_orden==opciones_correctas_respuesta_ejer2_orden[1] or respuesta_ejer2_orden==opciones_correctas_respuesta_ejer2_orden[2]:
+    print("La tuviste bien.")
+  else:
+    print("Lo ordena de mayor a menor. Mire la linea 5.")
+  ejer2_ejer3_ordenamientos=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if ejer2_ejer3_ordenamientos=="":
+    ejer3_algoritmos_ordenamiento()
+  elif ejer2_ejer3_ordenamientos=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    ejer2_ejer3_ordenamientos=input("Presione enter para continuar o escriba 'salir' para ir al inicio:")
+def ejer3_algoritmos_ordenamiento():
+  print("\nEjercicio 3:\ndef selectionSort(lista):\n  for i in range(len(lista)):\n   min = i\n   for j in range(i, len(lista)):\n      if (lista[j]) < lista[min]:\n       min = j\n   aux = lista[i]\n    lista[i] = lista[min]\n   lista[min] = aux\n  return lista\nL=[54,26,93,17,77,31,44,55,20]\nprint(selectionSort(L))")
+  respuesta_ejer3_orden=input("¿Este algoritmo ordena de 'menor a mayor' o de 'mayor a menor'?: ")
+  opciones_correctas_respuesta_ejer3_orden=["Menor a Mayor","menor a mayor","creciente"]
+  if respuesta_ejer3_orden==opciones_correctas_respuesta_ejer3_orden[0] or respuesta_ejer3_orden==opciones_correctas_respuesta_ejer3_orden[1] or respuesta_ejer3_orden==opciones_correctas_respuesta_ejer3_orden[2]:
+    print("La tuviste bien.")
+  else:
+    print("Lo ordena de mayor a menor. Mire la linea 5.")
+
+  ejer3_ordenamientos_algoritmos_busquedas=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+  if ejer3_ordenamientos_algoritmos_busquedas=="":
+    algoritmos_busquedas_lectura()
+  elif ejer3_ordenamientos_algoritmos_busquedas=="salir":
+    instrucciones()
+  else:
+    print("Error.\nVuelva a ingresar su opcion")
+    ejer3_ordenamientos_algoritmos_busquedas=input("Presione enter para continuar o escriba 'salir' para ir al inicio:")
+
+#Busquedas
+def algoritmos_busquedas_lectura():
+    print("Así como existen algoritmos de ordenamiento también existen algoritmos de búsqueda.\nDe estos, se van a observar 2")
+    print("")
+    print("---------------")
+    print("Busqueda lineal")
+    print("---------------")
+    print("")
+    print("Ejemplo del algoritmo:")
+    print("")
+    print("""list = [10,14,19,26,27,31,33,35,42,43]
+for i in range(0,len(list)):
+  if search==list[i]:
+    print(str(search) + " encontrado en la posición " + str(i))""")
+    print("")
+    print("- Es un algoritmo bastante sensillo.es que se puede usar en lineas desordenadas\n- la lista puede estar desordenada. \n- la velocidad de ejecución depende linearmente del tamaño del arreglo")
+    print("")
+    print("-----------------")
+    print("Busqueda binaria")
+    print("-----------------")
+    print("")
+    print("Ejemplo del algoritmo:")
+    print("")
+    print("""def binary_search(list, buscado):
+    min = 0  
+    max = len(list) - 1  
+    while True:
+        if max < min:
+            return -1
+        m = (min + max) // 2  
+        if list[m] < buscado:
+            min = m + 1  
+        elif list[m] > buscado:
+            max = m - 1
+        else:
+            return m
+list = [10,14,19,26,27,31,33,35,42,43]
+search = int(input("Ingrese el número a buscar"))
+print (binary_search(list,search))""")
+    print("")
+    print("- Este utiliza el enfoque divide y venceras tal y como el algoritmo de ordenamiento MergeSort().\n- Se utiliza en listas ordenadas\n - Copara todos los valores con el elemento del medio de la lista y si no son iguales se elimina la mitad en la cual el valor no puede estar")
+    print("")
+    print("")
+    algoritmos_busquedas_a_ejer=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if algoritmos_busquedas_a_ejer=="":
+      ejercicios_ordenamiento()
+    elif algoritmos_busquedas_a_ejer=="salir":
+      instrucciones()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+    algoritmos_busquedas_a_ejer=input("Presione enter para continuar o escriba 'salir' para ir al inicio:")
+
+def ejercicios_ordenamiento():
+    true_tupla = ("T", "t", "true", "True")
+    false_tupla = ("F", "f", "false", "False")
+    contador_sorting = 0
+    print("")
+    print("Ahora, vas a completar un pequeño quiz para ver si has entendido todo")
+    print("")
+    print("Pregunta 1")
+    print("")
+    print("¿Linear search se utiliza para algoritmos desordenados?")
+    respuesta1 = input("Escribe si la respuesta es true o false: ")
+    print("")
+    print("Pregunta 2")
+    print("")
+    print("¿En la busqueda binaria se usa el enfoque divide y venceras?")
+    respuesta2 = input("Escribe si la respuesta es true o false: ")
+    print("")
+    print("Pregunta 3")
+    print("")
+    print("¿Busueda lineal es más eficiente que busqueda binaria?")
+    respuesta3 = input("Escribe si la respuesta es true o false: ")
+    if respuesta1 in true_tupla:
+        contador_sorting += 1
+    if respuesta2 in true_tupla:
+        contador_sorting += 1
+    if respuesta3 in false_tupla:
+        contador_sorting += 1
+    print("tuviste ", contador_sorting, "/3 bien")
+    print("¿Quieres volver a intentarlo?")
+    volver_a_intentar_sorting = input("Si quieres volver a intentarlo escribe la palabra si aca: ")
+    if volver_a_intentar_sorting == "si" or volver_a_intentar_sorting == "sí":
+        ejercicios_ordenamiento()
+    busquedas_a_archivos=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if busquedas_a_archivos=="":
+      lectura_archivos()
+    elif busquedas_a_archivos=="salir":
+      creditos()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+    busquedas_a_archivos=input("Presione enter para continuar o escriba 'salir' para ir al inicio:") 
+
+#archivos
+def lectura_archivos():
+    print("En esta parte se va a hablar de archivos informáticos. Estos son: un conjunto de bytes almacenados en un dispositivo.\nEste dispositivo suele ser el disco duro de la PC, pero\ntambién podría ser un CD. Incluso en nuestros celulares también tenemos archivos.")
+    print("Ejemplos communes de archivos son: Documentos hechos en word o excel (doc, xls). Archivos de canciones(mp3). Archivos de video (mp4), etc.")
+    print("“Sobreviven” aún cuando se apague la PC.")
+    print("")
+    print("Lo que se necesita para poder leer un archivo:")
+    print("1) Abrir el archivo y asociar el archivo con una variable.\n2) Un comando para leer la información.\n3) Un comando para cerrar el archivo.")
+    print("")
+    print("En Python, para abrir un archivo usaremos la función open() y recibe dos parámetros:\n1. El primero de ellos, es la ruta hacia el archivo que se desea abrir\n2. Y el segundo, el modo en el cual se va acceder (modo de apertura)")
+    print("Por ejemplo:")
+    print("<nombre variable> = open(<nombre del archivo>, <modo acceso>)")
+    print("")
+    print("Modos de acceso por ejemplo son:\nr - Solo lectura\nw - Solo escritura. Sobreescribe si el archivo existe. Crea archivo si no existe\nw+ - escritura y lectura. Sobreescribe si el archivo existe. Crea archivo si no existe")
+    print("")
+    print("Ejemplos:")
+    print("")
+    print("Abriendo un archivo")
+    print("")
+    print("""inputFile = open("data.txt","r")""")
+    print("donde inputFile es una variable, data.txt es el archivo y r es el modo en el que lo vas a abrir")
+    print("")
+    print("Ejemplo 2")
+    print("")
+    print("Leer información de un archivo")
+    print("")
+    print("for line in inputFile:\n\tprint(line)")
+    print("Donde line es una variable y inputFIle es la variable del archivo")
+    print("")
+    print("Tambien se puede leer un archivo utilizando la variable readline()")
+    print("Esta permite obetener una linea del archivo")
+    print("Esto funciona ya que cada archivo que se encuentra abierto tiene ya una posición asociada, que indica el último punto en el que fue leido\nCada vez que se avanza una linea, avanza esa posición. Por eso, readline() devuelve cada vez una linea distinta y no la misma")
+    print("")
+    print("Ejemplo:")
+    print("")
+    print("""inputfile = open("hola.txt","r")\nlinea = inputfile.readline()\nwhile linea != "":\n\tprint(linea,end="")\nlinea=inputfile.readline()""")
+    print("")
+    print("Otro formato que se puede utilizar es readlines. Este permite obtener todas las lineas de un archivo. Devuelve los elementos en una lista, donde cada elemento de la lista es una linea del archivo")
+    print("")
+    print("Ejemplo:")
+    print("")
+    print("""inputFile= open("hola.txt","r")\nlineas = inputFile.readlines()\nprint(lineas)""")
+    print("")
+    print("Para imprimir el numero de linea incluído esto se haría así:")
+    print("""inputFile=open("hola.txt","r")\ni = 1\nfor linea in inputFile:\n\tprint("%d: %s" % (i, linea),end="")\n\ti+=1\ninputFile.close()""")
+    print("")
+    print("Los archivos tienen diversos usos. Por ejemplo, utilizando las funciones aprendidas en la sección de strings y listas, se podrían sacar datos del archivo y modificarlos en un programa")
+    print("Algo importante que tener en cuenta es que funciones como inputFIle.readlines() carga en la memoria el archivo completo. Por eso, es conveniente utilizar archivos pequeños, sino, se estaría consumiendo toda la memoria de la computadora completa")
+    print("")
+    print("Para cerrar un archivo se puede utilizar la función close()")
+    print("")
+    print("Por ejemplo:")
+    print("inputfile.close()")
+    print("")
+    print("")
+    print("Ahora se va a comentar como escribir en un archivo")
+    print("Para hacer eso tienes que:\n1) Abrir el archivo y asociar el archivo con una variable\n2) Un comando para escribir la información\n3)Un comando para cerrar el archivo")
+    print("")
+    print("Para abrir un archivo el cual se desea escribir en la funcion es la siguiente:")
+    print("""<nombre variable> = open(<nombre del archivo>, "w")""")
+    print("Por ejemplo:")
+    print("""outputFile = open("data.txt", "w")""")
+    print("")
+    print("Para escribir en el archivo, puedes usar la función write() junto con una cadena.\nOJO: ten en cuenta que esta función sólo tomará un parámetro de la cadena")
+    print("Sintaxis: outputfile .write(cadena)")
+    print("Ejemplo: outputfile .write(temp)")
+    print("")
+    print("Para escribir en un archivo, se abre en la forma w+")
+    print("Por ejemplo:")
+    print("")
+    print("""inputFile= open("hola2.txt","w+")\nintputFile.write("hola doctor")\ninputFile.write("si, que paso?")\ninputFile.close())""")
+    print("")
+    print("Para escribir al final de un archivo, se abre con modo de apertura a")
+    print("")
+    print("Para renombrar un archivo se utiliza el método rename()")
+    print("Por ejemplo:")
+    print("os.rename(<current_file_name>, <new_file_name>)")
+    print("Donde os es el nombre del archivo, current_file_name es el nombre del archivo que se quiere renombrar y new_file_name es el nuevo nombre")
+    print("")
+    print("Para borrar un archivo, se utiliza el método remove()")
+    print("")
+    print("Por ejemplo:")
+    print("import os")
+    print("""os.remove(<file_name>)""")
+    print("")
+    print("También existen exepciones. Estas se usan para lidear con errores, por ejemplo, de bloqueo. Para lidear con estas se usa la función try")
+    print("")
+    archivos_a_ejer=input("\nPresione enter para ir a los ejercicios o escriba 'salir' para ir al inicio: ")
+    if archivos_a_ejer=="":
+      ejercicios_archivos()
+    elif archivos_a_ejer=="salir":
+      creditos()
+    else:
+      print("Error.\nVuelva a ingresar su opcion")
+    archivos_a_ejer=input("Presione enter para continuar o escriba 'salir' para ir al inicio:")
+def ejercicios_archivos():
+    true_tupla = ("T", "t", "true", "True")
+    false_tupla = ("F", "f", "false", "False")
+    modo_escritura_w_tupla = ("w+", "W+")
+    contador_archivos = 0
+    print("")
+    print("Para ver si has entendido tienes que responder con True o False a las siguientes preguntas: ")
+    print("")
+    print("Pregunta 1")
+    print("")
+    print("¿Es necesario cerrar un archivo una vez que se termina de usar?")
+    pregunta1archivos =input("Responde con True o False acá: ")
+    print("")
+    print("Pregunta 2")
+    print("")
+    print("Como se llama el archivo que se esta abriendo en el código a continuación:")
+    print("""inputFile=open("icc.txt","r")\ni = 1\nfor linea in inputFile:\n\tprint("%d: %s" % (i, linea),end="")\n\ti+=1\ninputFile.close()""")
+    pregunta2archivos = input("Escribe el nombre del archivo acá (escribe el nombre exactamnete como aparece en el código): ")
+    print("¿Que modo de apertura permite leer y editar un archivo al mismo tiempo?")
+    pregunta3archivos = input("Escribe el modo de apertura necesario(a,ab,a+,ab+,r,r+,w,w+):")
+    print("¿Funciones como inputFile.readlines() no ocupan espacio de la memoria?")
+    pregunta4archivos = input("Responde con True o False acá: ")
+    if pregunta1archivos in true_tupla:
+        contador_archivos += 1
+    if pregunta2archivos == "icc.txt":
+        contador_archivos += 1
+    if pregunta3archivos in modo_escritura_w_tupla:
+        contador_archivos += 1
+    if pregunta4archivos in false_tupla:
+        contador_archivos += 1
+    print("tuviste ", contador_archivos, "/4 bien")
+    print("¿Quieres volver a intentarlo?")
+    volver_a_intentar_archivos = input("Si quieres volver a intentarlo escribe la palabra si aca: ")
+    if volver_a_intentar_archivos == "si" or volver_a_intentar_archivos == "sí":
+        ejercicios_archivos()
+    creditos()
+#creditos
+def creditos():
+  print("-----------------------------------------"
+        "\nProgramasción:"
+        "\nHumberto Bernal"
+        "\nGonzalo Garcia"
+        "\nAlexandra Meerovici"
+        "\n"
+        "\nPrograma finalizado")
+
+#main
+instrucciones()

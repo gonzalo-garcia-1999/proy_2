@@ -1,0 +1,544 @@
+# Listas
+def lectura_listas():
+    print("\n---------------------"
+          "\nSECCIÓN 4: LISTAS"
+          "\n---------------------")
+    time.sleep(1)
+    print(
+        "\nUna lista puede definirse como una estructura de datos que permite agrupar una secuencia de datos en una sola variable para su acceso por posición."
+        "\nLa lista puede ser escrita por valores separados por coma (ítems) entre corchetes."
+        "\nNo es necesario que los ítems de una lista tengan todos el mismo tipo."
+        "\n Una lista tiene elementos desde 0 a N-1; siendo N la cantidad de elementos"
+        "\nEjemplo:"
+        "\nlist=[valor1,valor2,valor3,...,valorN]")
+    print("Por lo tanto el primer elemento de la lista es 0, el segundo elemento de la lista es 1, el tercer elemento de la lista es 3, asi consecutivamente hasta el número total de elementos.")
+    e=input()
+    print("\n-------------------------"
+          "\nOperaciones con listas:"
+          "\n-------------------------"
+          "\n Para crear o asignar elementos a una lista se utiliza el comando: list.append(valor); donde list es el nombre de la lista y valor es el elemento que desea agregar a la lista"
+          "\n"
+          "\n lista1=['A','B','C']"
+          "\n print(lista1)"
+          "\n>>['A','B','C']"
+          "\n"
+          "\n lista1.append('D')"
+          "\n print(lista1)"
+          "\n>>['A','B','C','D']")
+    e=input()
+    print(
+          "\n Para copiar listas debemos:"
+          "\n"
+          "\n lista1=['A','B','C']"
+          "\n lista2 = lista1"
+          "\n print(lista1, lista2)"
+          "\n>>['A','B','C'] ['A','B','C']"
+          "\n"
+          "\n lista1 = ['A','C']"
+          "\n print(lista1, lista2)"
+          "\n>>['A','C'] ['A','B','C']")
+    e=input()
+    print("Además, se pueden insertar elementos en una lista utilizando el comando:"
+          "\nlist.insert(n,elemento); donde list es el nombre de la lista, n es el número de posición de la lista y el elemento es la variable de cualquier tipo que deseas insertar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.insert(1,'Juan')"
+          "\nprint(nombres)"
+          "\n>>['Pepe','Juan','Dora']")
+    e=input()
+    print("\n"
+      "\nTambién se pueden buscar elementos en una lista utilizando el comando:"
+          "\nlist.index(elemento); donde list es el nombre de la lista y el elemento es la variable de cualquier tipo que deseas insertar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nif 'Pepe' in nombres:"
+          "\n   n=nombres.index('Pepe')"
+          "\nelse:"
+          "\n   n= -1"
+          "\nprint(n)"
+          "\n>>0")
+    print("El valor de n es 0 por que el string Pepe esta en la posición 0 de la lista nombres.")
+    e=input()
+    print("\n"
+          "\nPara la eliminación de elementos en lista se utiliza el comando:"
+          "\nlista.pop(n); siento lista el nombre de la lista y n la posición del elemento que se desea eliminar"
+          "\nlista.remove(elemento); siendo lista el nombre de la lista y elemento la variable que se desea eliminar"
+          "\n"
+          "\nEjemplo:"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.pop(0)"
+          "\nprint(nombres)"
+          "\n>>['Dora']"
+          "\n"
+          "\nnombres=['Pepe','Dora']"
+          "\nnombres.remove('Pepe'))"
+          "\nprint(nombres)"
+          "\n>>['Dora']")
+    e=input()
+    print("Operaciones con listas:"
+          "\nFunciones(siendo list el nombre de la lista):"
+          "\n sum(list); para sumar la lista"
+          "\n max(list); para hallar el elemento máximo"
+          "\n min(list); para hallar el elemento mínimo"
+          "\n list.sort(list); para ordenar la lista"
+          "\n len(list); para saber la cantidad de variables dentro de la lista"
+          "\n"
+          "\nEjemplos:"
+          "\nanimales=['gato','puma','león','tigre']"
+          "\nvalor= len(animales)"
+          "\n>>4")
+    a=input()
+    if a=="":
+      ejercicios_listas_simples()
+      time.sleep(1)
+      lectura_listas_anidadas()
+def ejercicios_listas_simples():
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  print("--------------------------"
+  "\nEJERCICIOS LISTAS:"
+  "\n--------------------------")
+  time.sleep(1)
+  print("Vamos a practicar la identificación de listas simples"
+  "\nPara ello vamos a mostrarle varias listas y usted tendrá que escribir Verdadero(V) o False (F) según corresponda:"
+  "\n")
+  puntos_listas_simples=0
+  cont=0
+  time.sleep(1)
+  print("¿Es una lista?")
+  print("\na) list=[2,3,4,5,6]")
+  p_list_simple1=input("Tipo: ")
+  print("\nb) apple:[1,2,3,4,5]")
+  p_list_simple2=input("Tipo: ")
+  print("\nc) game=(1,3,4,5)")
+  p_list_simple3=input("Tipo: ")
+  print("\nd) animals={'gato','perro'}")
+  p_list_simple4=input("Tipo: ")
+  print("\ne) frutas=['rojo','verde','azul']")
+  p_list_simple5=input("Tipo: ")
+
+  if p_list_simple1 in True_V:
+     puntos_listas_simples += 1
+  if p_list_simple2 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple3 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple4 in False_F:
+      puntos_listas_simples += 1
+  if p_list_simple5 in True_V:
+      puntos_listas_simples += 1
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_listas_simples, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_listas_simples == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_listas_simples < 6:
+    print("¿Quieres seguir practicando?¿Ir al menu o continuar?")
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_listas_simples()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        instruccion()
+      else:
+        print("Error.Responde")
+def lectura_listas_anidadas():
+  print("\n---------------"
+  "\nListas anidadas"
+  "\n-----------------"
+  "\n"
+  "\nLas listas anidadas son listas dentro de otras listas."
+  "\n Ejemplo:"
+  "colores=[['azul','amarillo'],['verde'],['rojo','naranja'],]"
+  "\nPara utilizar un valor de estas listas de utiliza corchetes []."
+  "\nDe forma Nombre_de_lista[posición1][posición2]"
+  "\n"
+  "\nEjemplo:"
+  "\n Alumnos = [['Kike',8],['Jhon',20],['Tyler',18]"
+  "\n for i in range(len(Alumnos)):"
+  "\n     print(Alumnos[i][1])"
+  "\n>>8"
+  "\n>>20"
+  "\n>>18")
+  a=input()
+  if a =="":
+    ejercicios_listas_anidadas()
+    time.sleep(1)
+    lectura_listas_tuplas()
+def ejercicios_listas_anidadas():
+  print("--------------------------"
+  "\nEJERCICIOS DE LISTAS ANIDADAS :"
+  "\n--------------------------")
+  print("Vamos a practicar el tipo de anidadas "
+  "\nPara ello vamos a mostrarle varios listas y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  time.sleep(1)
+  puntos_int=0
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  pruebaint1=input("lista=[2,3,[2],{1}] ")
+  pruebaint2=input("animal_1={1,[2,3],3} ")
+  pruebaint3=input("plant:['vida','naturaleza'] ")
+  pruebaint4=input("lista1=[gato,perro]")
+  pruebaint5=input("notas=[['Juan',20],['Pablo',18],['Pepe',16]] ")
+  if pruebaint1 in False_F:
+     puntos_int += 1
+  if pruebaint2 in False_F:
+      puntos_int += 1
+  if pruebaint3 in False_F:
+      puntos_int += 1
+  if pruebaint4 in False_F:
+      puntos_int += 1
+  if pruebaint5 in True_V:
+      puntos_int += 1
+  cont=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_int, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_int == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_int < 6:
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        seguir_practicando = "s"
+        ejercicios_listas_anidadas()
+      elif seguir_practicando =="continuar":
+        return
+      elif seguir_practicando=="menu":
+        instrucciones()
+      else:
+        print("Error.Responde")
+#tuplas
+def lectura_listas_tuplas():
+  print(""
+  "\n-----------"
+  "\nLas Tuplas"
+  "\n-----------")
+  time.sleep(1)
+  print("\nLas tuplas son otro tipo de estructura de datos."
+  "\n Tienen las mismas caracteristicas que una lista, solo que se utiliza paréntesis () en vez de corchetes[]."
+  "\n"
+  "\nEjemplo:"
+  "\n tupla_ejemplo = (1,3,6,9)"
+  "\nprint(tupla_ejemplos)"
+  "\n>>(1,3,6,9)"
+  "\n"
+  "\nprint(max(tupla_ejemplos))"
+  "\n>>9")
+  e=input()
+  print("A diferencia de una lista que si es posible alterar su contenido, una vez que se crea una tupla, no se puede alterar su contenido. "
+  "\n"
+  "\ntupla_ejemplo = (1,2,3)"
+  "\ntupla[2] = 0"
+  "\n>>TypeError: 'tuple' object does not support ítem assignment")
+  e=input()
+  print(
+    "\nLas tuplas tienen un procedimiento para el unpacking de sus valores, es decir, para que cada valor pueda ser desempaquetado a variables o parámetros."
+    "\n"
+    "\nEjemplos:"
+    "\ntupla_ejemplo = (1, 2, 3, 4)"
+    "\nprint(tupla)"
+    "\n>>(1, 2, 3, 4)"
+    "\n"
+    "\ndef imprime_tupla(a, b, c, d):"
+    "\n    print(a, b, c, d)"
+    "\ntupla = (1, 2, 3, 4)"
+    "\nprint(imprime_tupla(tupla))"
+    "\n>>TypeError: fun() missing 3 required positional arguments: 'b', 'c', and 'd'"
+    "\n"
+    "\n#correctamente se utiliza el *"
+    "\nprint(imprime_tupla(*tupla))"
+    "\n>>1 2 3 4")
+  e=input()
+  print("Para realizar una asignación, podemos poner una tupla en el lado izquierdo."
+  "\n"
+  "\nEjemplos:"
+  "\n (x,y) = 50, 'pepe'"
+  "\nprint(y)"
+  "\n>>pepe"
+  "\n"
+  "\n (d,f) = (50, 34)"
+  "\nprint(d)"
+  "\n>>50")
+  e=input()
+  print("Tambien se puede comparar tuplas utilizando operadores. Si el primer elemento es igual, Python pasa al siguiente elemento, y así sucesivamente, hasta encontrar elementos que difieren. Cuando se traba de letras se utiliza el orden de alfabeto. Cuando la comparación es correcta, se le nombre True y cuando es incorrecta False"
+  "\nLos signos son;"
+  "\n-mayor que (>)"
+  "\n-menor que (>)"
+  "\n-igual que (==)"
+  "\n-desigual (!=)"
+  "\n"
+  "\nEjemplos:"
+  "\nx = ('Jones', 'Sally') > ('Adams', 'Sam')"
+  "\nprint(x)"
+  "\n>>True"
+  "\n"
+  "\n a= (0, 1, 2000) < (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>True"
+  "\n"
+  "\n a= (0, 1, 2000) == (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>False"
+  "\n"
+  "\n a= (0, 1, 4) != (0, 3, 4)"
+  "\nprint(a)"
+  "\n>>True")
+  a=input()
+  if a == "":
+    ejercicios_listas_tuplas()
+    time.sleep(1)
+    ejercicios_listas_tuplas2()
+def ejercicios_listas_tuplas():
+  print("--------------------------"
+  "\nEJERCICIOS DE TUPLAS :"
+  "\n--------------------------")
+  print("Vamos a practicar esta nueva estructura de datos. "
+  "\nPara ello vamos a mostrarle varios enunciados y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_tuplas1=0
+  True_V = ["True", "T", "t", "true","V","v"]
+  False_F = ["False", "false", "F", "f",]
+  pruebatupla1=input("Los valores dentro de las tuplas pueden modificarse: ")
+  pruebatupla2=input("Se pueden utilizar operadores comunes (<,>,==,!=) para comparar tuplas: ")
+  pruebatupla3=input("gallo=['verde','rojo','amarillo'] es una Tupla")
+  pruebatupla4=input("Se pueden imprimir las tuplas con el comando:" 
+  "\nfor i in range(len(tupla)):"
+  "\n   print(tupla[i])"
+  "\n:")
+  pruebatupla5=input("Se necesita el * para desempaquetar las tuplas")
+  if pruebatupla1 in False_F:
+     puntos_tuplas1 += 1
+  if pruebatupla2 in True_V:
+      puntos_tuplas1 += 1
+  if pruebatupla3 in False_F:
+      puntos_tuplas1 += 1
+  if pruebatupla4 in False_F:
+      puntos_tuplas1 += 1
+  if pruebatupla5 in True_V:
+      puntos_tuplas1 += 1
+  cont=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_tuplas1, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_tuplas1 == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_tuplas1 < 6:
+    while cont==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        cont=1
+        seguir_practicando = "s"
+        ejercicios_listas_tuplas()
+      elif seguir_practicando =="continuar":
+        cont=1
+        ejercicios_listas_tuplas2()
+      elif seguir_practicando=="menu":
+        cont=1
+        instrucciones()
+      else:
+        print("Error.Responde")
+def ejercicios_listas_tuplas2():
+  print("\n--------------------------"
+  "\nEJERCICIOS DE TUPLAS 2 :"
+  "\n--------------------------"
+  "\n")
+  time.sleep(1)
+  print("\nComo superaste el primer nivel de tuplas, ahora podras intentar pasar este segundo nivel."
+  "\n"
+  "\nEjercicio:"
+  "\nEl programa dado permite identificar si el elemento ingresado pertenece a la tupla. Tu trabajo será encontrar el error e ingresar el codigo correcto")
+  print("\nTupla = ('w','3','r','e','s','o','u','r','c','e',45','17','a')"
+  "\nelemento=input()"
+  "\nif elemento in Tupla:"
+  "\n   print('Si se encuentra en la tupla')"
+  "\n")
+  prueba_tupla21=input("¿Hay algun error?: ")
+  if prueba_tupla21=="si" or "yes" or "Si" or "SI":
+      puntos_tuplas = 0
+  if prueba_tupla21=="no" or "NO" or "No":
+      puntos_tuplas = 1
+  else:
+    print("Responde (si/no)")
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_tuplas, "pregunta correcta de 1"
+  "\n----------------------------------")
+  conta=0
+  if puntos_tuplas == 1:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_tuplas < 3:
+    while conta==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        conta=1
+        seguir_practicando = "s"
+        ejercicios_listas_tuplas2()
+      elif seguir_practicando =="continuar":
+        conta=1
+        lectura_diccionarios()
+      elif seguir_practicando=="menu":
+        conta=1
+        instrucciones()
+      else:
+        print("Error.Responde")
+#Diccionarios
+def lectura_diccionarios():
+  print("Los diccionarios sirven para almacenar información, ordenar información y buscar información."
+  "\nCada diccionario esta compuesto por pares de datos;"
+  "\nUn campo llave, pra hacer una búsqueda y nos permita luego manipular el registro."
+  "\nUn campo valor, para almacenar cualquier tipo de dato"
+  "\nPara crear un diccionario en Python utilizamos llaves {}"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo = {}"
+  "\nDiccionario_ejemplo2 = {'Ron':19,'Pepe':20,'Juan':18}"
+  "\n~Siendo Ron la primera llave y 19 el primer valor. Consecutivamente Pepe la segunda llave y 20 el segundo valor.")
+  e=input()
+  print("La búsqueda es similar a una lista, la diferencia por ser diccionario es ingresar el campo llave y te retorna el campo valor pero si no encuentra la llave retorna error."
+    "\n"
+    "\nEjemplo:"
+    "\nDiccionario_ejemplo3 = {'a':1,'b':2,'c':3}"
+    "\nprint(Diccionario_ejemplo3['c']"
+    "\n>>3"
+    "\n"
+    "\nDiccionario_ejemplo4 = {'Alvaro':29,'Cesar':34,'Pablo':12}"
+    "\nprint(Diccionario_ejemplo4['Antonio'])"
+    "\n>>KeyError: 'Antonio'")
+  e= input()
+  print("Operaciones con diccionarios:"
+        "\nPara hacer un registro al diccionario.Se debe usar los corchetes [], escribiendo dentro la nueva llave y luego = al nuevo valor."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo5 = {'Adam':45,'Sandler':34,'Wilson':21}"
+        "\nDiccionario_ejemplo5['Juan'] = 10"
+        "\nprint(Diccionario_ejemplo5)"
+        "\n>>{'Adam':45,'Sandler':34,'Wilson':21,'Juan':10}"
+        "\n"
+        "\nPara verificar si existe una llave en el diccionario se utiliza el comando -variable in Diccionario-; donde variable es la llave que se busca y Diccionario es el nombre del diccionario."
+        "\n"
+        "\nEjemplo:"
+        "\nDiccionario_ejemplo6 = {'Ant':45,'Seal':34,'Wanda':21}"
+        "\na = 'Ant' in Diccionario_ejemplo6"
+        "\nprint(a)"
+        "\n>>True"
+        "\nb = 'Bear' in Diccionario_ejemplo6"
+        "\nprint(b)"
+        "\n>>False")
+  e=input()
+  print("Para obtener todas las llaves de una tupla debemos usar el comando Nombre_de_Diccionario.keys() o para obtener todos los valores usar Nombre_de_Diccionario.values()"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo7= {'Rocio'16:,'Álvaro'18:,'Katherine':17,'Jorge':19}"
+  "\ntupla_keys = Diccionario_ejemplo7.keys()"
+  "\nprint(tupla)"
+  "\n>>dict_keys(['Rocio', 'Álvaro', 'Katherine','Jorge'])"
+  "\n"
+  "\ntupla_values = Diccionario_ejemplo7.values"
+  "\nprint(tupla_values)"
+  "\n>>dict_values([16, 18, 17, 19])")
+  e=input()
+  print("Existen caracteristicas relevantes acerca de las llaves y los valores"
+  "\n Las llaves:"
+  "\n -Deben ser valores únicos"
+  "\n -Tipo de dato inmutable(int,float,string,tuple,bool)"
+  "\n"
+  "\n Los valores:"
+  "\n -Cualquier tipo de dato(inmutable o mutable)"
+  "\n -Pueden ser valores duplicados")
+  e=input()
+  print("Para agregar un elemento a un diccionario podemos usar el comando Nombre_del_diccionario.update({llave:valor})"
+  "\n"
+  "\nEjemplo:"
+  "\nDiccionario_ejemplo8 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nDiccionario_ejemplo8.update({'universidad':'Utec'})"
+  "\nprint(Diccionario_ejemplo8)"
+  "\n>>{'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30,'universidad':'Utec'")
+  e=input()
+  print("Para borrar elementos a un diccionario se utiliza el comando Nombre_de_Diccionario.delete({llave:valor}) o Nombre_de_Diccionario[llave]"
+  "\n"
+  "\nEjemplos:"
+  "\nDiccionario_ejemplo9 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nDiccionario_ejemplo9.delete({'sección':12})"
+  "\nprint(Diccionario_ejemplo9)"
+  "\n>>{'profe':'Maria','laboratorio':603,'alumnos':30}"
+  "\n"
+  "\ndel Diccionario_ejemplo9['alumnos']"
+  "\nprint(Diccionario_ejemplo9)"
+  "\n>>{'profe':'Maria','laboratorio':603,}")
+  e=input()
+  print("Para recorrer un diccionario, es decir, separar los valores de las llaves o los items se utilizan estructuras de control repetitivas;"
+  "\nfor valor in Nombre_de_Diccionario:"
+  "\n   print(valor)"
+  "\nfor valor in diccionario.items():"
+  "\na  print(valor)"
+  "\n"
+  "\nEjemplos:"
+  "\nDiccionario_ejemplo10 = {'profe':'Maria','sección':12,'laboratorio':603,'alumnos':30}"
+  "\nfor valor in Diccionario_ejemplo10:"
+  "\n   print(valor)"
+  "\n>>profe"
+  "\n>>sección"
+  "\n>>laboratorio"
+  "\n>>alumnos"
+  "\n"
+  "\nfor valor in Diccionario_ejemplo10.items():"
+  "\n   print(valor)"
+  "\n>>('profe','Maria')"
+  "\n>>('sección',12}"
+  "\n>>('laboratorio',603)"
+  "\n>>('alumnos',30)")
+  a=input()
+  if a =="":
+    ejercicios_diccionarios()
+def ejercicios_diccionarios():
+  print("--------------------------"
+  "\nEJERCICIOS DE DICCIONARIOS :"
+  "\n--------------------------")
+  print("Vamos a practicar esta estructura de datos. "
+  "\nPara ello vamos a mostrarle varios enunciados y usted tendrá que escribir si el enunciado es verdadero(V) o falso(F):"
+  "\n")
+  puntos_diccionario1=0
+  True_V = ["True", "T", "t", "true","V","v","Verdadero"]
+  False_F = ["Falso", "false", "F", "f",]
+  pruebatupla1=input("Los diccionarios son estructuras de datos Repetitivas")
+  pruebatupla2=input("Se pueden utilizar operadores comunes (<,>,==,!=) para comparar tuplas: ")
+  pruebatupla3=input("Se pueden repetir llaven dentro de un diccionario")
+  pruebatupla4=input("Los valores de los diccionarios no pueden ser cambiados")
+  pruebatupla5=input("lista={'pepe':12,'maria':34} es un diccionario")
+  if pruebatupla1 in False_F:
+     puntos_diccionario1 += 1
+  if pruebatupla2 in True_V:
+      puntos_diccionario1 += 1
+  if pruebatupla3 in True_V:
+      puntos_diccionario1 += 1
+  if pruebatupla4 in False_F:
+      puntos_diccionario1 += 1
+  if pruebatupla5 in True_V:
+      puntos_diccionario1 += 1
+  conte=0
+  print("\n------------------------------------"
+  "\nObtuviste", puntos_diccionario1, "preguntas bien"
+  "\n----------------------------------")
+  if puntos_diccionario1 == 5:
+    print("¡Muy bien tuviste todo bien!")
+  if puntos_diccionario1 < 6:
+    while conte==0:
+      seguir_practicando = input("(reintentar/menu/continuar): ")
+      if seguir_practicando == "reintentar":
+        conte=1
+        seguir_practicando = "s"
+        ejercicios_diccionarios()
+      elif seguir_practicando =="continuar":
+        conte=1
+        lectura_función()
+      elif seguir_practicando=="menu":
+        conte=1
+        instrucciones()
+      else:
+        print("Error.Responde")
